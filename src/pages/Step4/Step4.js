@@ -5,7 +5,7 @@ import './Step4.scss'
 import UserIcon from 'assets/images/user-icon.svg'
 import EmailIcon from 'assets/images/email-icon.svg'
 import PostcodeIcon from 'assets/images/postcode-icon.svg'
-import PhoneIcon from "assets/images/phone-icon.svg"
+import PhoneIcon from 'assets/images/phone-icon.svg'
 import { setFormValues, setId, setIsPosted } from 'redux/slices/user'
 import { useEffect, useState } from 'react'
 import axios from 'utils/api'
@@ -35,7 +35,7 @@ const Step4 = () => {
 				email: v.email,
 				postal_code: v.postcode,
 				phone_number: v.phone,
-				isWaiver: v.isWaiver ? 'Yes' : 'No',
+				waiver: v.isWaiver ? 'Yes' : 'No',
 				receive_email: v.isTermsAgreed ? 'Yes' : 'No',
 				lang
 			})
@@ -86,21 +86,21 @@ const Step4 = () => {
 	const initialFormState = formValues
 	const { values, onChange, onSubmit } = useForm(submitForm, initialFormState)
 	useEffect(() => {
-		const getRules = async () => {
-			try {
-				const {
-					data: { data }
-				} = await axios.get(
-					`/apps/getRulesRegs/${eventInfo.campaign_id}/${lang}`
-				)
-				setRulesText(data[0].text)
-				setRulesTitle(data[0].title)
-			} catch (err) {
-				console.log('error: ', err)
-			}
-		}
 		getRules()
 	}, [])
+
+	const getRules = async () => {
+		try {
+			const {
+				data: { data }
+			} = await axios.get(`/apps/getRulesRegs/${eventInfo.campaign_id}/${lang}`)
+			setRulesText(data[0].text)
+			setRulesTitle(data[0].title)
+		} catch (err) {
+			console.log('error: ', err)
+		}
+	}
+
 	return (
 		<Layout next={() => postFormValues(values)} prev={() => navigate('/step2')}>
 			<div className='Step4'>

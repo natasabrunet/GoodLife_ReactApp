@@ -23,8 +23,7 @@ const Step6 = () => {
 		try {
 			const { data } = await axios.put('/apps/completeLeadRegister', {
 				id,
-				gender: 0,
-				sevenDayPass: status ? 'YES' : 'NO',
+				approx_value: status ? 'Yes' : 'No',
 				// female_gyms: isFemale ? 'Yes' : 'No',
 				goal: fitnessGoal,
 				// approx_value: isValued ? 'Yes' : 'No',

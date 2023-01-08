@@ -77,7 +77,7 @@ const Step8 = () => {
 				{prize && (
 					<div className='scratch_me'>
 						<ScratchMe
-							width={630}
+							width={500}
 							height={465}
 							foregroundImageSrc={cover}
 							backgroundImageSrc={prize.image}

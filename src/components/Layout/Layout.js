@@ -104,7 +104,7 @@ const Layout = ({
 							className='modal-button c-main-btn'
 							onClick={() => {
 								setToggleInfo(false)
-								navigate('/step4')
+								navigate('/step3')
 							}}>
 							LEAD FORM
 						</button>

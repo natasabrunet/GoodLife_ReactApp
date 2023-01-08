@@ -26,9 +26,16 @@
 	// }
 	.scratch_me {
 		> div {
+			border-radius: 10px;
+			overflow: hidden;
+			width: 500px;
 			background-image: url(./../../assets/images/stracBg.png);
 			margin: 0 auto;
-		}
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+}
 	}
 	&__prize-modal {
 		position: fixed;
