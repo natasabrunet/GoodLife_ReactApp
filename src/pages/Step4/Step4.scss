@@ -1,0 +1,101 @@
+@import 'assets/styles';
+
+.Step4 {
+	width: 100%;
+	&__header {
+		margin-bottom: 50px;
+	}
+	&__buttons {
+		width: 100%;
+		@include flex(space-between);
+	}
+	&__form {
+		width: 100%;
+		&--row {
+			width: 100%;
+			@include flex(space-between);
+			margin-bottom: 40px;
+			&:nth-last-of-type(2) {
+				margin-bottom: 95px;
+			}
+			.form-input {
+				width: 100%;
+				@include flex(flex-start);
+				background-color: #fff;
+				border-bottom: 2px solid #a7a9ac;
+				&:nth-of-type(2) {
+					margin-left: 20px;
+				}
+				img {
+					margin-right: 20px;
+				}
+				input {
+					width: 100%;
+					background-color: #fff;
+					padding: 15px 0;
+					border: none;
+					@include font(20px, 400, 25px, #231f20);
+				}
+			}
+		}
+		&--checkbox-container {
+			margin-bottom: 38px;
+			width: 100%;
+			@include flex(flex-start, flex-start);
+			&:last-of-type {
+				margin-bottom: 85px;
+			}
+			label {
+				@include font(14px, 400, 20px, #231f20);
+				padding-left: 20px;
+				span {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	&__prize-modal {
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.4);
+		@include flex;
+		&--content {
+			width: 650px;
+			height: 700px;
+			max-height: 700px;
+			overflow: auto;
+			position: relative;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.16);
+			.close-button {
+				width: 100%;
+				@include flex(space-between);
+				border-bottom: 2px solid #a7a9ac;
+				padding: 30px;
+				margin-bottom: 20px;
+				position: sticky;
+				background-color: #fff;
+				top: 0;
+				left: 0;
+			}
+			h2 {
+				@include font(20px, 700, 24px, #231f20);
+			}
+			h3 {
+				@include font(20px, 700, 24px, #231f20);
+				margin-left: 90px;
+			}
+			p {
+				@include font(16px, 400, 20px, #231f20);
+				margin: 30px;
+			}
+		}
+	}
+}

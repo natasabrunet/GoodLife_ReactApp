@@ -1,0 +1,45 @@
+@import 'assets/styles';
+
+.Settings {
+	width: 100%;
+	&__header {
+		margin-bottom: 50px;
+	}
+	&__info-text {
+		width: 100%;
+		@include flex(space-between);
+		@include font(16px, 400, 25px, #231f20);
+		margin: 50px 0;
+		border-bottom: 2px solid #a7a9ac;
+		padding: 10px 0;
+		span {
+			&:last-child {
+				margin-right: 45px;
+				font-weight: bold;
+			}
+		}
+	}
+	&__form {
+		width: 100%;
+		max-height: 490px;
+		overflow-y: auto;
+	}
+	&__textbox {
+		&--header {
+			@include font(16px, bold, 25px, #231f20);
+		}
+		&--textarea {
+			width: 100%;
+			padding: 30px;
+			border-radius: 10px;
+			border: 1px solid #a7a9ac;
+			margin-top: 20px;
+			margin-bottom: 50px;
+			resize: none;
+		}
+	}
+	&__submit-btn {
+		width: 100%;
+		@include flex(flex-end);
+	}
+}

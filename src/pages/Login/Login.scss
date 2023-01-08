@@ -1,0 +1,64 @@
+@import 'assets/styles';
+
+.Login {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	@include flex;
+	&__content {
+		width: 520px;
+		height: 510px;
+		border-radius: 10px;
+		background-color: #fff;
+		box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.16);
+		.close-button {
+			width: 100%;
+			@include flex(space-between);
+			border-bottom: 2px solid #a7a9ac;
+			padding: 30px;
+		}
+		.modal-header {
+			margin-top: 40px;
+			margin-bottom: 50px;
+			margin-left: 90px;
+		}
+		.modal-subheader {
+			@include font(20px, 700, 24px, #231f20);
+			margin-left: 90px;
+		}
+		.modal-paragraph {
+			@include font(16px, 400, 20px, #231f20);
+			margin-bottom: 50px;
+			margin-top: 30px;
+			margin-left: 90px;
+			max-width: 320px;
+		}
+		.modal-button {
+			margin-top: 100px;
+		}
+		&--subheader {
+			@include font(20px, 400, 40px, #231f20);
+			@include flex;
+			img {
+				margin-right: 20px;
+			}
+		}
+		&--form {
+			width: 100%;
+			@include flex(center, center, column);
+			input {
+				width: 340px;
+				border: none;
+				border-bottom: 1px solid grey;
+				margin-top: 100px;
+				@include font(20px, 400, 25px, #231f20);
+				padding: 10px 0;
+			}
+		}
+	}
+}

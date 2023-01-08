@@ -1,0 +1,35 @@
+@import 'assets/styles';
+
+.Step0 {
+	width: 100%;
+	position: relative;
+	&__header {
+		margin-bottom: 50px;
+	}
+	&__subheader {
+		@include font(16px, 700, 25px, #231f20);
+		margin-bottom: 12px;
+	}
+	&__info-text {
+		@include font(16px, 400, 25px, #231f20);
+		margin-bottom: 30px;
+		border-bottom: 2px solid #a7a9ac;
+		padding: 10px 0;
+		&.dropdown {
+			border: none;
+			border-bottom: 2px solid #a7a9ac;
+			width: 100%;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: url('../../assets/images/dropdown-icon.svg') 99% / 15%
+				no-repeat;
+			background-size: 25px 25px;
+		}
+	}
+	&__start-btn {
+		width: 100%;
+		margin-top: 350px;
+		@include flex(flex-end);
+	}
+}

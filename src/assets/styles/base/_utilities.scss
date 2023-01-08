@@ -1,0 +1,42 @@
+.hide-desktop {
+	display: none;
+}
+.show-desktop {
+	display: inherit;
+}
+.hide-tablet {
+	display: inherit;
+}
+.show-tablet {
+	display: none;
+}
+.hide-mobile {
+	display: inherit;
+}
+.show-mobile {
+	display: none;
+}
+@include desktop {
+	.hide-desktop {
+		display: inherit;
+	}
+	.show-desktop {
+		display: none;
+	}
+}
+@include tablet {
+	.hide-tablet {
+		display: none;
+	}
+	.show-tablet {
+		display: inherit;
+	}
+}
+@include mobile {
+	.hide-mobile {
+		display: none;
+	}
+	.show-mobile {
+		display: inherit;
+	}
+}
