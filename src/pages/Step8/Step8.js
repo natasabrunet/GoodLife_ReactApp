@@ -54,7 +54,7 @@ const Step8 = () => {
 	}
 
 	return (
-		<Layout>
+		<Layout isPagination={false}>
 			<div className='Step7'>
 				<h1
 					dangerouslySetInnerHTML={{

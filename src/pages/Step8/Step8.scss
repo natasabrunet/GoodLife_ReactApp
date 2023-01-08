@@ -24,8 +24,9 @@
 	// 		opacity: 1;
 	// 	}
 	// }
-	.scratch_me{
-		>div{
+	.scratch_me {
+		> div {
+			background-image: url(./../../assets/images/stracBg.png);
 			margin: 0 auto;
 		}
 	}
@@ -68,7 +69,6 @@
 				margin-top: 30px;
 				max-width: 320px;
 			}
-		
 		}
 	}
 	.ScratchCard__Container {
