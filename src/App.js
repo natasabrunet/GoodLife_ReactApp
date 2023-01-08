@@ -19,6 +19,7 @@ const Step4 = lazy(() => import('pages/Step4/Step4'))
 const Step5 = lazy(() => import('pages/Step5/Step5'))
 const Step6 = lazy(() => import('pages/Step6/Step6'))
 const Step7 = lazy(() => import('pages/Step7/Step7'))
+const Step8 = lazy(() => import('pages/Step8/Step8'))
 const Settings = lazy(() => import('pages/Settings/Settings'))
 const NotFound = lazy(() => import('pages/NotFound/NotFound'))
 
@@ -40,18 +41,16 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<Navigate to='/login' />} />
 				<Route path='/login' element={<Login />} />
-				<Route path='/step0' element={<Layout ChildComponent={Step0} />} />
-				<Route path='/step1' element={<Step1 />} />
-				<Route path='/step2' element={<Layout ChildComponent={Step2} />} />
-				<Route path='/step3' element={<Layout ChildComponent={Step3} />} />
-				<Route path='/step4' element={<Layout ChildComponent={Step4} />} />
-				<Route path='/step5' element={<Layout ChildComponent={Step5} />} />
-				<Route path='/step6' element={<Layout ChildComponent={Step6} />} />
-				<Route path='/step7' element={<Layout ChildComponent={Step7} />} />
-				<Route
-					path='/settings'
-					element={<Layout ChildComponent={Settings} />}
-				/>
+				<Route path='/step0' element={<Step0 />} />
+				{/* <Route path='/step1' element={<Step1 />} /> */}
+				<Route path='/step1' element={<Step2 />} />
+				<Route path='/step2' element={<Step3 />} />
+				<Route path='/step3' element={<Step4 />} />
+				<Route path='/step4' element={<Step5 />} />
+				<Route path='/step5' element={<Step6 />} />
+				<Route path='/step6' element={<Step7 />} />
+				<Route path='/step7' element={<Step8 />} />
+				<Route path='/settings' element={<Settings />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</Suspense>

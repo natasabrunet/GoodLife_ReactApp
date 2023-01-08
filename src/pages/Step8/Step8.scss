@@ -1,0 +1,92 @@
+@import 'assets/styles';
+
+.Step7 {
+	width: 100%;
+	&__header {
+		margin-bottom: 48px;
+		min-height: 80px;
+		font-weight: 900 !important;
+		font-size: 40px !important;
+		line-height: 48px;
+		text-align: center;
+		color: #000000;
+	}
+	// &__prize-img {
+	// 	width: 100%;
+	// 	height: 520px;
+	// 	object-fit: cover;
+	// 	object-position: center;
+	// 	opacity: 0;
+	// 	position: absolute;
+	// 	z-index: -1;
+	// 	&.show {
+	// 		z-index: 1;
+	// 		opacity: 1;
+	// 	}
+	// }
+	.scratch_me{
+		>div{
+			margin: 0 auto;
+		}
+	}
+	&__prize-modal {
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.4);
+		@include flex;
+		&--content {
+			width: 520px;
+			height: 500px;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.16);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			.close-button {
+				width: 100%;
+				@include flex(flex-end);
+				border-bottom: 2px solid #a7a9ac;
+				padding: 30px;
+			}
+			.modal-header {
+				margin-top: 40px;
+				margin-bottom: 50px;
+			}
+			.modal-subheader {
+				@include font(20px, 700, 24px, #231f20);
+			}
+			.modal-paragraph {
+				@include font(16px, 400, 20px, #231f20);
+				margin-bottom: 50px;
+				margin-top: 30px;
+				max-width: 320px;
+			}
+		
+		}
+	}
+	.ScratchCard__Container {
+		width: 100%;
+		height: 520px;
+	}
+	.ScratchCard__Canvas {
+		width: 100%;
+		height: 520px;
+	}
+	.ScratchCard__Result {
+		width: 100%;
+		height: 520px;
+		img {
+			width: 100%;
+			height: 520px;
+			object-position: center;
+			object-fit: cover;
+		}
+	}
+}

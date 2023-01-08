@@ -41,7 +41,7 @@
 		&--checkbox-container {
 			margin-bottom: 38px;
 			width: 100%;
-			@include flex(flex-start, flex-start);
+			@include flex(flex-start, center);
 			&:last-of-type {
 				margin-bottom: 85px;
 			}
@@ -51,6 +51,48 @@
 				span {
 					text-decoration: underline;
 					cursor: pointer;
+				}
+			}
+			button {
+				width: 92px;
+				height: 46px;
+				background: linear-gradient(0deg, #3341dd, #3341dd), #3341dd;
+				border-radius: 23px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 15px;
+				flex-shrink: 0;
+				overflow: hidden;
+				input {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					z-index: 2;
+				}
+
+				span {
+					font-weight: 30;
+					font-size: 15px;
+					line-height: 18px;
+					text-align: center;
+					color: #ffffff;
+				}
+
+				i {
+					width: 37px;
+					height: 38px;
+					display: flex;
+					position: absolute;
+					left: 4px;
+					top: 4px;
+					background: #ffffff;
+					z-index: 1;
+					border-radius: 18.5px;
 				}
 			}
 		}

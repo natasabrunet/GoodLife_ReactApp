@@ -5,14 +5,14 @@ import './Step4.scss'
 import UserIcon from 'assets/images/user-icon.svg'
 import EmailIcon from 'assets/images/email-icon.svg'
 import PostcodeIcon from 'assets/images/postcode-icon.svg'
-import PhoneIcon from 'assets/images/phone-icon.svg'
+import PhoneIcon from "assets/images/phone-icon.svg"
 import { setFormValues, setId, setIsPosted } from 'redux/slices/user'
-import Toggle from 'react-toggle'
 import { useEffect, useState } from 'react'
 import axios from 'utils/api'
 import { toast, ToastContainer } from 'react-toastify'
 import CloseModal from 'assets/images/close-modal.svg'
 import { texts } from 'utils/localizedTexts'
+import Layout from 'components/Layout/Layout'
 
 const Step4 = () => {
 	const [rulesText, setRulesText] = useState('')
@@ -35,13 +35,14 @@ const Step4 = () => {
 				email: v.email,
 				postal_code: v.postcode,
 				phone_number: v.phone,
+				isWaiver: v.isWaiver ? 'Yes' : 'No',
 				receive_email: v.isTermsAgreed ? 'Yes' : 'No',
 				lang
 			})
 			dispatch(setFormValues(values))
 			dispatch(setId(data.data.id))
 			dispatch(setIsPosted(true))
-			navigate('/step5')
+			navigate('/step4')
 		} catch (err) {
 			console.log(err)
 			toast.error(err.response.data.message)
@@ -58,10 +59,11 @@ const Step4 = () => {
 				email: v.email,
 				postal_code: v.postcode,
 				phone_number: v.phone,
+				isWaiver: v.isWaiver ? 'Yes' : 'No',
 				receive_email: v.isTermsAgreed ? 'Yes' : 'No'
 			})
 			dispatch(setFormValues(values))
-			navigate('/step5')
+			navigate('/step4')
 		} catch (err) {
 			console.log(err)
 			toast.error(err.response.data.message)
@@ -100,116 +102,150 @@ const Step4 = () => {
 		getRules()
 	}, [])
 	return (
-		<div className='Step4'>
-			<h1 className='Step4__header c-main-header'>
-				{texts[lang].step4.formHeader}
-			</h1>
-			<form className='Step4__form' id='user-info' onSubmit={onSubmit}>
-				<div className='Step4__form--row'>
-					<div className='form-input'>
-						<img src={UserIcon} alt='first name' />
-						<input
-							autoComplete='off'
-							type='text'
-							name='firstName'
-							value={values.firstName}
-							onChange={onChange}
-							required
-							placeholder={texts[lang].step4.formPlaceholders.firstName}
-						/>
-					</div>
-					<div className='form-input'>
-						<img src={UserIcon} alt='last name' />
-						<input
-							autoComplete='off'
-							type='text'
-							name='lastName'
-							value={values.lastName}
-							onChange={onChange}
-							required
-							placeholder={texts[lang].step4.formPlaceholders.lastName}
-						/>
-					</div>
-				</div>
-				<div className='Step4__form--row'>
-					<div className='form-input'>
-						<img src={EmailIcon} alt='email' />
-						<input
-							autoComplete='off'
-							type='email'
-							name='email'
-							value={values.email}
-							onChange={onChange}
-							required
-							placeholder={texts[lang].step4.formPlaceholders.email}
-						/>
-					</div>
-				</div>
-				<div className='Step4__form--row'>
-					<div className='form-input'>
-						<img src={PostcodeIcon} alt='postcode' />
-						<input
-							autoComplete='off'
-							type='text'
-							name='postcode'
-							value={values.postcode}
-							onChange={onChange}
-							required
-							placeholder={texts[lang].step4.formPlaceholders.postcode}
-						/>
-					</div>
-					<div className='form-input'>
-						<img src={PhoneIcon} alt='phone number' />
-						<input
-							autoComplete='off'
-							type='text'
-							name='phone'
-							value={values.phone}
-							onChange={onChange}
-							required
-							placeholder={texts[lang].step4.formPlaceholders.phone}
-						/>
-					</div>
-				</div>
-				<div className='Step4__form--checkbox-container'>
-					<Toggle
-						id='isTermsAgreed'
-						name='isTermsAgreed'
-						defaultChecked={values.isTermsAgreed}
-						onChange={onChange}
-					/>
-					<label>{texts[lang].step4.emailAgreementText}</label>
-				</div>
-				<div className='Step4__form--checkbox-container'>
-					<Toggle
-						id='isRulesAgreed'
-						name='isRulesAgreed'
-						defaultChecked={values.isRulesAgreed}
-						onChange={onChange}
-					/>
-					<label>
-						{texts[lang].step4.rulesHeader.text}{' '}
-						<span onClick={() => setToggleRules(true)}>
-							{texts[lang].step4.rulesHeader.link}
-						</span>
-					</label>
-				</div>
-			</form>
-			{toggleRules && (
-				<div className='Step4__prize-modal'>
-					<div className='Step4__prize-modal--content'>
-						<div className='close-button'>
-							<h2>{rulesTitle ? rulesTitle : null}</h2>
-							<img
-								src={CloseModal}
-								alt='close modal'
-								onClick={() => setToggleRules(false)}
+		<Layout next={() => postFormValues(values)} prev={() => navigate('/step2')}>
+			<div className='Step4'>
+				<h1 className='Step4__header c-main-header'>
+					{texts[lang].step4.formHeader}
+				</h1>
+				<div className='Step4__form' id='user-info'>
+					<div className='Step4__form--row'>
+						<div className='form-input'>
+							<img src={UserIcon} alt='first name' />
+							<input
+								autoComplete='off'
+								type='text'
+								name='firstName'
+								value={values.firstName}
+								onChange={onChange}
+								required
+								placeholder={texts[lang].step4.formPlaceholders.firstName}
 							/>
 						</div>
-						{rulesText && (
-							<div dangerouslySetInnerHTML={{ __html: rulesText }}></div>
-						)}
-						{/* <p>
+						<div className='form-input'>
+							<img src={UserIcon} alt='last name' />
+							<input
+								autoComplete='off'
+								type='text'
+								name='lastName'
+								value={values.lastName}
+								onChange={onChange}
+								required
+								placeholder={texts[lang].step4.formPlaceholders.lastName}
+							/>
+						</div>
+					</div>
+					<div className='Step4__form--row'>
+						<div className='form-input'>
+							<img src={EmailIcon} alt='email' />
+							<input
+								autoComplete='off'
+								type='email'
+								name='email'
+								value={values.email}
+								onChange={onChange}
+								required
+								placeholder={texts[lang].step4.formPlaceholders.email}
+							/>
+						</div>
+					</div>
+					<div className='Step4__form--row'>
+						<div className='form-input'>
+							<img src={PostcodeIcon} alt='postcode' />
+							<input
+								autoComplete='off'
+								type='text'
+								name='postcode'
+								value={values.postcode}
+								onChange={onChange}
+								required
+								placeholder={texts[lang].step4.formPlaceholders.postcode}
+							/>
+						</div>
+						<div className='form-input'>
+							<img src={PhoneIcon} alt='phone number' />
+							<input
+								autoComplete='off'
+								type='text'
+								name='phone'
+								value={values.phone}
+								onChange={onChange}
+								required
+								placeholder={texts[lang].step4.formPlaceholders.phone}
+							/>
+						</div>
+					</div>
+					<div className='Step4__form--checkbox-container'>
+						<button
+							style={{ opacity: values.isTermsAgreed ? 100 : 0.23 }}
+							type='button'>
+							<input
+								type={'checkbox'}
+								id='isTermsAgreed'
+								name='isTermsAgreed'
+								defaultChecked={values.isTermsAgreed}
+								onChange={onChange}
+							/>
+							<span>NO</span>
+							<span>YES</span>
+							<i style={{ left: values.isTermsAgreed ? '4px' : '50px' }}></i>
+						</button>
+						<label>{texts[lang].step4.emailAgreementText}</label>
+					</div>
+					<div className='Step4__form--checkbox-container'>
+						<button
+							style={{ opacity: values.isRulesAgreed ? 100 : 0.23 }}
+							type='button'>
+							<input
+								type={'checkbox'}
+								id='isRulesAgreed'
+								name='isRulesAgreed'
+								defaultChecked={values.isRulesAgreed}
+								onChange={onChange}
+							/>
+							<span>NO</span>
+							<span>YES</span>
+							<i style={{ left: values.isRulesAgreed ? '4px' : '50px' }}></i>
+						</button>
+						<label>
+							{texts[lang].step4.rulesHeader.text}{' '}
+							<span onClick={() => setToggleRules(true)}>
+								{texts[lang].step4.rulesHeader.link}
+							</span>
+						</label>
+					</div>
+					<div className='Step4__form--checkbox-container'>
+						<button
+							style={{ opacity: values.isWaiver ? 100 : 0.23 }}
+							type='button'>
+							<input
+								type={'checkbox'}
+								id='isWaiver'
+								name='isWaiver'
+								defaultChecked={values.isWaiver}
+								onChange={onChange}
+							/>
+							<span>NO</span>
+							<span>YES</span>
+							<i style={{ left: values.isWaiver ? '4px' : '50px' }}></i>
+						</button>
+						<label>{texts[lang].step4.waiver}</label>
+					</div>
+				</div>
+				{toggleRules && (
+					<div className='Step4__prize-modal'>
+						<div className='Step4__prize-modal--content'>
+							<div className='close-button'>
+								<h2>{rulesTitle ? rulesTitle : null}</h2>
+								<img
+									src={CloseModal}
+									alt='close modal'
+									onClick={() => setToggleRules(false)}
+								/>
+							</div>
+							{rulesText && (
+								<div dangerouslySetInnerHTML={{ __html: rulesText }}></div>
+							)}
+							{/* <p>
 							<b>
 								THIS CONTEST IS OPEN ONLY TO RESIDENTS OF CANADA (OTHER THAN
 								RESIDENTS OF QUEBEC) AND IS GOVERNED BY CANADIAN LAW
@@ -653,21 +689,13 @@ const Step4 = () => {
 							CONTEST MUST BE DIRECTED TO THE ADMINISTRATOR, INFEILD MARKETING
 							GROUP INC.
 						</p> */}
+						</div>
 					</div>
-				</div>
-			)}
-			<div className='Step4__buttons'>
-				<button className='c-main-btn' onClick={() => navigate('/step3')}>
-					<span className='prev-arrow'>&larr;</span>{' '}
-					{lang === 'en' ? 'BACK' : 'RETOUR'}
-				</button>
-				<button className='c-main-btn' type='submit' form='user-info'>
-					{lang === 'en' ? 'CONTINUE' : 'SUIVANT'}{' '}
-					<span className='next-arrow'>&rarr;</span>
-				</button>
+				)}
+
+				<ToastContainer />
 			</div>
-			<ToastContainer />
-		</div>
+		</Layout>
 	)
 }
 

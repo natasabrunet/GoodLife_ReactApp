@@ -1,12 +1,15 @@
+import HomeBanner from 'components/icons/HomeBanner'
+import Layout from 'components/Layout/Layout'
 import { useForm } from 'hooks/useForm'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import { setTeamLeadId } from 'redux/slices/report'
 import { setTeamLeads } from 'redux/slices/teamLeads'
 import axios from 'utils/api'
 import './Step0.scss'
+import dress from 'assets/images/dress.png'
 
 const Step0 = () => {
 	const navigate = useNavigate()
@@ -34,36 +37,44 @@ const Step0 = () => {
 		getTeamLeads()
 	}, [])
 	return (
-		<div className='Step0'>
-			<h1 className='Step0__header c-main-header'>Event Setup</h1>
-			<h2 className='Step0__subheader'>Event Name</h2>
-			<p className='Step0__info-text'>
-				{eventInfo.name} - {eventInfo.start_date} to {eventInfo.end_date}
-			</p>
-			<h2 className='Step0__subheader'>Team Lead Name</h2>
-			{teamLeads.length && (
-				<form id='teamLead' onSubmit={onSubmit}>
-					<select
-						name='teamLead'
-						className='Step0__info-text dropdown'
-						value={values.teamLead}
-						onChange={onChange}>
-						<option>GoodLife Staff</option>
-						{teamLeads.map(({ id, first_name, last_name }) => (
-							<option key={id} value={id}>
-								{first_name} {last_name}
-							</option>
-						))}
-					</select>
-				</form>
-			)}
-			<div className='Step0__start-btn'>
-				<button className='c-main-btn' type='submit' form='teamLead'>
-					START
-				</button>
+		<Layout isHome={true} info={false} setting={false}>
+			<div className='Step0'>
+				<div className='banner'>
+					<HomeBanner />
+				</div>
+
+				<div className='dress_content'>
+					<div>
+						<h1>WIN $10,000</h1>
+						<h2>IN PERSONAL TRAINING</h2>
+						<h6>
+							PLUS MLSE GRAND PRIZE PACKS (Includes: 1 Year GoodLife
+							Memberships, Game Tickets, Real Sports Gift Cards and Jerseys)
+						</h6>
+					</div>
+					<img src={dress} />
+				</div>
+
+				<Link to={"/step1"}>ENTER NOW</Link>
+				<p>
+					*No purchase necessary to enter the Contest. Contest begins January
+					10, 2023 and ends on December 31, 2023. Contest open to residents of
+					Canada other than Quebec who are not employees of GoodLife Fitness
+					Centres Inc. or Influence Retail Services Inc. To participate,
+					complete the on-screen instructions via iPad at select GoodLife
+					sponsored events or go to www.GLMembership.ca to complete the Entry
+					Form. The names of all valid participants will be entered into a Grand
+					Prize draw for a chance to win 2, 1-year ‘All Club including Group
+					Fitness’ Memberships to GoodLife Fitness with an approximate retail
+					value of $1,000, as well as GoodLife personal training sessions valued
+					at $10,000 CAD. Grand Prize Draw will take place on January 5, 2024
+					and the Winner will be contacted on that date. Other conditions apply.
+					Visit www.GLMembership.ca for more details and for full rules and
+					regulations. This Contest is administered by Influence Retail Services
+					Inc. who retains sole responsibility of the Contest.
+				</p>
 			</div>
-			<ToastContainer />
-		</div>
+		</Layout>
 	)
 }
 

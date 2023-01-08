@@ -1,3 +1,4 @@
+import Layout from 'components/Layout/Layout'
 import { useForm } from 'hooks/useForm'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -74,85 +75,92 @@ const Settings = () => {
 		getNumberOfLeads()
 	}, [])
 	return (
-		<div className='Settings'>
-			<h1 className='Setting__header c-main-header'>Closing Report</h1>
-			<div className='Settings__info-text'>
-				<span>Number of Leads Generated</span>
-				<span>{report.leads_count}</span>
+		<Layout isPagination={false}>
+			<div className='Settings'>
+				<h1 className='Setting__header c-main-header'>Closing Report</h1>
+				<div className='Settings__info-text'>
+					<span>Number of Leads Generated</span>
+					<span>{report.leads_count}</span>
+				</div>
+				<form
+					id='closing-report'
+					onSubmit={onSubmit}
+					className='Settings__form'>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>Weather</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='weather'
+							value={values.weather}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>Highlights</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='highlights'
+							value={values.highlights}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>
+							Challenges & Learnings
+						</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='challenges'
+							value={values.challenges}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>
+							Premium Inventory remaining
+						</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='inventory'
+							value={values.inventory}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>
+							Estimated Event Attendance
+						</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='attendance'
+							value={values.attendance}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+					<div className='Settings__textbox'>
+						<h2 className='Settings__textbox--header'>Notes</h2>
+						<textarea
+							className='Settings__textbox--textarea'
+							name='notes'
+							value={values.notes}
+							rows={4}
+							onChange={onChange}
+						/>
+					</div>
+				</form>
+				<div className='Settings__submit-btn'>
+					<button className='c-main-btn' type='submit' form='closing-report'>
+						SUBMIT
+					</button>
+				</div>
+				<ToastContainer />
 			</div>
-			<form id='closing-report' onSubmit={onSubmit} className='Settings__form'>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>Weather</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='weather'
-						value={values.weather}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>Highlights</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='highlights'
-						value={values.highlights}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>Challenges & Learnings</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='challenges'
-						value={values.challenges}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>
-						Premium Inventory remaining
-					</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='inventory'
-						value={values.inventory}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>
-						Estimated Event Attendance
-					</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='attendance'
-						value={values.attendance}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-				<div className='Settings__textbox'>
-					<h2 className='Settings__textbox--header'>Notes</h2>
-					<textarea
-						className='Settings__textbox--textarea'
-						name='notes'
-						value={values.notes}
-						rows={4}
-						onChange={onChange}
-					/>
-				</div>
-			</form>
-			<div className='Settings__submit-btn'>
-				<button className='c-main-btn' type='submit' form='closing-report'>
-					SUBMIT
-				</button>
-			</div>
-			<ToastContainer />
-		</div>
+		</Layout>
 	)
 }
 

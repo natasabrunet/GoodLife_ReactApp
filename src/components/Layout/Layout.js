@@ -1,34 +1,97 @@
 import './Layout.scss'
-import Logo from 'assets/images/logo.svg'
-import SettingsIcon from 'assets/images/settings-icon.svg'
-import InfoIcon from 'assets/images/info-icon.svg'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { useState } from 'react'
 import CloseModal from 'assets/images/close-modal.svg'
+import LogoIcon from 'components/icons/LogoIcon'
+import { Link } from 'react-router-dom'
+import InfoIcon from 'components/icons/InfoIcon'
+import SettingIcon from 'components/icons/SettingIcon'
+import lang from 'redux/slices/lang'
+import ArrowIcon from 'components/icons/ArrowIcon'
+import { useSelector } from 'react-redux'
 
-const Layout = ({ ChildComponent }) => {
+const Layout = ({
+	isHome = false,
+	setting = true,
+	info = true,
+	next = false,
+	prev = false,
+	isPagination = true,
+	children
+}) => {
+	const location = useLocation()
 	const [toggleInfo, setToggleInfo] = useState(false)
 	const navigate = useNavigate()
+	const lang = useSelector(state => state.lang)
+
 	return (
 		<div className='Layout'>
 			<header className='Layout__header'>
-				<img src={InfoIcon} alt='info' onClick={() => setToggleInfo(true)} />
-				<img src={Logo} alt='logo' onClick={() => navigate('/step1')} />
-				<img
-					src={SettingsIcon}
-					alt='settings'
-					onClick={() => navigate('/settings')}
-				/>
+				{info ? (
+					<button onClick={() => setToggleInfo(true)}>
+						<InfoIcon />
+					</button>
+				) : (
+					<span></span>
+				)}
+				<Link to={'/step1'}>
+					<LogoIcon />
+				</Link>
+				{setting ? (
+					<button onClick={() => navigate('/settings')}>
+						<SettingIcon />
+					</button>
+				) : (
+					<span></span>
+				)}
 			</header>
-			<div className='Layout__content'>
-				<ChildComponent />
-			</div>
+			{isHome ? (
+				<div>{children}</div>
+			) : (
+				<>
+					<div className='Layout__content'>{children}</div>
+					<div className='btn__pagination'>
+						{prev ? (
+							<button className='c-main-btn' onClick={prev}>
+								<span className='prev-arrow'>
+									<ArrowIcon />
+								</span>{' '}
+								{lang === 'en' ? 'BACK' : 'RETOUR'}
+							</button>
+						) : (
+							<span></span>
+						)}
+						{isPagination && (
+							<ul>
+								{[1, 1, 1, 1, 1].map((item, index) => (
+									<li
+										className={
+											Number(location.pathname.split('p')[1]) === index + 1 &&
+											'active'
+										}></li>
+								))}
+							</ul>
+						)}
+
+						{next ? (
+							<button className='c-main-btn' onClick={next}>
+								{lang === 'en' ? 'NEXT' : 'RETOUR'}
+								<span className='next-arrow'>
+									<ArrowIcon />
+								</span>{' '}
+							</button>
+						) : (
+							<span></span>
+						)}
+					</div>
+				</>
+			)}
 			{toggleInfo && (
 				<div className='Layout__prize-modal'>
 					<div className='Layout__prize-modal--content'>
 						<div className='close-button'>
 							<h2 className='subheader'>
-								<img src={InfoIcon} alt='info-icon' />
+								<InfoIcon />
 								Information
 							</h2>
 							<img

@@ -1,21 +1,26 @@
 .c-main-btn {
-	background-color: #ee3124;
+	background-color: #fff;
 	padding: 20px;
 	border-radius: 10px;
-	@include font(20px, 700, 27px, #fff);
+	@include font(30px, 900, 27px, #000);
 	@include flex;
 	text-align: center;
 	text-transform: uppercase;
-	border: 2px solid #ee3124;
+	border: 2px solid #fff;
 	&:hover {
-		border-color: #ee3124;
-		background-color: #fff;
-		color: #ee3124;
+		border-color: #fff;
+		background-color: #000;
+		color: #fff;
 	}
 	.next-arrow {
 		margin-left: 20px;
 		font-size: 40px;
-	}
+		transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+}
 	.prev-arrow {
 		margin-right: 20px;
 		font-size: 40px;
@@ -23,23 +28,24 @@
 }
 
 .c-main-header {
+	text-align: center;
 	@include font(34px, 400, 40px, #231f20);
 }
 
 .c-main-option {
-	width: 215px;
-	height: 215px;
+	width: 239px;
+	height: 239px;
 	padding: 20px;
 	border-radius: 50%;
-	border: 2px solid #ee3124;
+	border: 4px solid #3341DD;
 	@include flex;
-	@include font(34px, 700, 40px, #ee3124);
+	@include font(60px, 900, 40px, #3341DD);
 	text-transform: uppercase;
 	cursor: pointer;
 	text-align: center;
 	&:hover,
 	&.active {
-		background-color: #ee3124;
+		background-color: #3341DD;
 		color: #fff;
 	}
 	&.sm {

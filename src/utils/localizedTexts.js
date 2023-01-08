@@ -12,9 +12,9 @@ export const texts = {
 		step4: {
 			formHeader: 'To enter the contest, please fill out your details below.',
 			formPlaceholders: {
-				firstName: 'First Name',
-				lastName: 'Last Name',
-				email: 'Email',
+				firstName: 'Live-Long Fan First Name',
+				lastName: 'Live-Long Fan Last Name',
+				email: 'Live-Long Fan Email',
 				postcode: 'Postal Code',
 				phone: 'Phone Number'
 			},
@@ -23,7 +23,8 @@ export const texts = {
 			rulesHeader: {
 				text: 'I have read and agree to the',
 				link: 'Rules & Regulations'
-			}
+			},
+			waiver: 'I have read and agree to the waiver terms.'
 		},
 		step5: {
 			womenHeader: 'Are you interested in For Women Clubs?',
@@ -37,16 +38,20 @@ export const texts = {
 			complimentary: 'Are you interested in a complimentary 7-day pass?'
 		},
 		step6: {
+			header: 'Are you interested in a<br />complimentary 7-day pass?'
+		},
+		step7: {
+			
 			header: 'Thank you for registering!',
 			boldLine1:
-				'You have been entered into our Grand Prize draw for the Get YOU Back contest.',
+				'You have been entered into our Grand Prize draw for the Live-Long Fans contest.',
 			line2:
 				'If you were interested in becoming a GoodLife Member or learning more about our Clubs, an Associate will be in touch with you.',
 			boldLine3: 'A confirmation has been sent to your email.',
 			button: 'PLAY THE SCRATCH GAME'
 		},
-		step7: {
-			scratchHeader: 'Scratch away to reveal your instant prize!',
+		step8: {
+			scratchHeader: 'Scratch away to reveal <br /> your instant prize!',
 			wonHeader: "You've won a",
 			claimHeader: 'Before you go!',
 			claimSubheader: 'Did you claim your prize?',
