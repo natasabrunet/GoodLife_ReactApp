@@ -43,12 +43,16 @@ const Step6 = () => {
 					className='Step2__header c-main-header'></h1>
 				<div className='Step2__options'>
 					<div
-						className='Step2__options--option c-main-option'
+						className={`Step2__options--option c-main-option ${
+							status && 'active'
+						}`}
 						onClick={() => setStatus(true)}>
 						{lang === 'en' ? 'YES' : 'OUI'}
 					</div>
 					<div
-						className='Step2__options--option c-main-option'
+						className={`Step2__options--option c-main-option ${
+							!status && 'active'
+						}`}
 						onClick={() => setStatus(false)}>
 						{lang === 'en' ? 'NO' : 'NON'}
 					</div>

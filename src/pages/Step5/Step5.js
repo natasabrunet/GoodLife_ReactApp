@@ -13,6 +13,8 @@ const Step5 = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const lang = useSelector(state => state.lang)
+	const { fitnessGoal } = useSelector(state => state.user)
+
 	const [isSubmittable, setIsSubmittable] = useState(false)
 	let reactSwipeEl
 	const isFemaleHandler = value => {
@@ -72,22 +74,30 @@ const Step5 = () => {
 					</h1>
 					<div className='Step5__options'>
 						<div
-							className='Step5__options--option c-main-option sm'
+							className={`Step5__options--option c-main-option sm ${
+								fitnessGoal === 'INCREASE ENERGY' && 'active'
+							}`}
 							onClick={() => fitnessGoalHandler('INCREASE ENERGY')}>
 							{texts[lang].step5.goals.energy}
 						</div>
 						<div
-							className='Step5__options--option c-main-option sm'
+							className={`Step5__options--option c-main-option sm ${
+								fitnessGoal === 'INCREASE STRENGTH' && 'active'
+							}`}
 							onClick={() => fitnessGoalHandler('INCREASE STRENGTH')}>
 							{texts[lang].step5.goals.strength}
 						</div>
 						<div
-							className='Step5__options--option c-main-option sm'
+							className={`Step5__options--option c-main-option sm ${
+								fitnessGoal === 'LOSE WEIGHT' && 'active'
+							}`}
 							onClick={() => fitnessGoalHandler('LOSE WEIGHT')}>
 							{texts[lang].step5.goals.weight}
 						</div>
 						<div
-							className='Step5__options--option c-main-option sm'
+							className={`Step5__options--option c-main-option sm ${
+								fitnessGoal === 'ALL OF THE ABOVE' && 'active'
+							}`}
 							onClick={() => fitnessGoalHandler('ALL OF THE ABOVE')}>
 							{texts[lang].step5.goals.all}
 						</div>
