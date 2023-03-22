@@ -102,7 +102,7 @@ const Step4 = () => {
 	}
 
 	return (
-		<Layout next={() => postFormValues(values)} prev={() => navigate('/step2')}>
+		<Layout setting={false} info={false} next={() => postFormValues(values)} prev={() => navigate('/step2')}>
 			<div className='Step4'>
 				<h1 className='Step4__header c-main-header'>
 					{texts[lang].step4.formHeader}
@@ -115,7 +115,7 @@ const Step4 = () => {
 								autoComplete='off'
 								type='text'
 								name='firstName'
-								value={values.firstName}
+								value={values?.firstName}
 								onChange={onChange}
 								required
 								placeholder={texts[lang].step4.formPlaceholders.firstName}
@@ -127,7 +127,7 @@ const Step4 = () => {
 								autoComplete='off'
 								type='text'
 								name='lastName'
-								value={values.lastName}
+								value={values?.lastName}
 								onChange={onChange}
 								required
 								placeholder={texts[lang].step4.formPlaceholders.lastName}
@@ -141,7 +141,7 @@ const Step4 = () => {
 								autoComplete='off'
 								type='email'
 								name='email'
-								value={values.email}
+								value={values?.email}
 								onChange={onChange}
 								required
 								placeholder={texts[lang].step4.formPlaceholders.email}
@@ -155,7 +155,7 @@ const Step4 = () => {
 								autoComplete='off'
 								type='text'
 								name='postcode'
-								value={values.postcode}
+								value={values?.postcode}
 								onChange={onChange}
 								required
 								placeholder={texts[lang].step4.formPlaceholders.postcode}
@@ -167,68 +167,58 @@ const Step4 = () => {
 								autoComplete='off'
 								type='text'
 								name='phone'
-								value={values.phone}
+								value={values?.phone}
 								onChange={onChange}
 								required
 								placeholder={texts[lang].step4.formPlaceholders.phone}
 							/>
 						</div>
 					</div>
-					<div className='Step4__form--checkbox-container'>
-						<button
-							style={{ opacity: values.isTermsAgreed ? 100 : 0.23 }}
-							type='button'>
-							<input
-								type={'checkbox'}
-								id='isTermsAgreed'
-								name='isTermsAgreed'
-								defaultChecked={values.isTermsAgreed}
-								onChange={onChange}
-							/>
-							<span>NO</span>
-							<span>YES</span>
-							<i style={{ left: values.isTermsAgreed ? '4px' : '50px' }}></i>
-						</button>
-						<label>{texts[lang].step4.emailAgreementText}</label>
-					</div>
-					<div className='Step4__form--checkbox-container'>
-						<button
-							style={{ opacity: values.isRulesAgreed ? 100 : 0.23 }}
-							type='button'>
-							<input
-								type={'checkbox'}
-								id='isRulesAgreed'
-								name='isRulesAgreed'
-								defaultChecked={values.isRulesAgreed}
-								onChange={onChange}
-							/>
-							<span>NO</span>
-							<span>YES</span>
-							<i style={{ left: values.isRulesAgreed ? '4px' : '50px' }}></i>
-						</button>
-						<label>
-							{texts[lang].step4.rulesHeader.text}{' '}
-							<span onClick={() => setToggleRules(true)}>
-								{texts[lang].step4.rulesHeader.link}
-							</span>
-						</label>
-					</div>
-					<div className='Step4__form--checkbox-container'>
-						<button
-							style={{ opacity: values.isWaiver ? 100 : 0.23 }}
-							type='button'>
-							<input
-								type={'checkbox'}
-								id='isWaiver'
-								name='isWaiver'
-								defaultChecked={values.isWaiver}
-								onChange={onChange}
-							/>
-							<span>NO</span>
-							<span>YES</span>
-							<i style={{ left: values.isWaiver ? '4px' : '50px' }}></i>
-						</button>
-						<label>{texts[lang].step4.waiver}</label>
+					<div
+						style={{
+							display: 'flex',
+							maxWidth: '812px',
+							margin: '0 auto',
+							gap: '32px'
+						}}>
+						<div className='Step4__form--checkbox-container'>
+							<button style={{ background: '#F90036' }} type='button'>
+								<input
+									type={'checkbox'}
+									id='isTermsAgreed'
+									name='isTermsAgreed'
+									defaultChecked={values?.isTermsAgreed}
+									onChange={onChange}
+								/>
+								<span>YES</span>
+								<span>NO</span>
+
+								<i
+									style={{ left: values?.isTermsAgreed ? '12px' : '71px' }}></i>
+							</button>
+							<label>{texts[lang].step4.emailAgreementText}</label>
+						</div>
+						<div className='Step4__form--checkbox-container'>
+							<button style={{ background: '#2242E0' }} type='button'>
+								<input
+									type={'checkbox'}
+									id='isRulesAgreed'
+									name='isRulesAgreed'
+									defaultChecked={values?.isRulesAgreed}
+									onChange={onChange}
+								/>
+								<span>YES</span>
+								<span>NO</span>
+								<i
+									style={{ left: values?.isRulesAgreed ? '12px' : '71px' }}></i>
+							</button>
+							<label>
+								{texts[lang].step4.rulesHeader.text}{' '}
+								<span onClick={() => setToggleRules(true)}>
+									{texts[lang].step4.rulesHeader.link}
+								</span>
+							</label>
+						</div>
 					</div>
 				</div>
 				{toggleRules && (

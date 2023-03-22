@@ -3,7 +3,8 @@
 .Step4 {
 	width: 100%;
 	&__header {
-		margin-bottom: 50px;
+		margin: 0 auto 50px;
+		max-width: 464px;
 	}
 	&__buttons {
 		width: 100%;
@@ -12,17 +13,18 @@
 	&__form {
 		width: 100%;
 		&--row {
-			width: 100%;
+			margin: auto;
+			max-width: 643px;
 			@include flex(space-between);
 			margin-bottom: 40px;
 			&:nth-last-of-type(2) {
-				margin-bottom: 95px;
+				margin-bottom: 60px;
 			}
 			.form-input {
 				width: 100%;
 				@include flex(flex-start);
 				background-color: #fff;
-				border-bottom: 2px solid #a7a9ac;
+				border-bottom: 2px solid black;
 				&:nth-of-type(2) {
 					margin-left: 20px;
 				}
@@ -34,14 +36,14 @@
 					background-color: #fff;
 					padding: 15px 0;
 					border: none;
-					@include font(20px, 400, 25px, #231f20);
+					@include font(20px, 400, 25px, black);
 				}
 			}
 		}
 		&--checkbox-container {
 			margin-bottom: 38px;
 			width: 100%;
-			@include flex(flex-start, center);
+			@include flex(flex-start, flex-start);
 			&:last-of-type {
 				margin-bottom: 85px;
 			}
@@ -54,10 +56,10 @@
 				}
 			}
 			button {
-				width: 92px;
-				height: 46px;
+				width: 122px;
+				height: 56px;
 				background: linear-gradient(0deg, #3341dd, #3341dd), #3341dd;
-				border-radius: 23px;
+				border-radius: 1000px;
 				position: relative;
 				display: flex;
 				align-items: center;
@@ -77,22 +79,27 @@
 
 				span {
 					font-weight: 30;
-					font-size: 15px;
+					font-size: 20px;
 					line-height: 18px;
 					text-align: center;
 					color: #ffffff;
 				}
 
 				i {
-					width: 37px;
-					height: 38px;
+					width: 40px;
+					height: 40px;
 					display: flex;
 					position: absolute;
-					left: 4px;
-					top: 4px;
+					left: 12px;
+					top: 50%;
 					background: #ffffff;
 					z-index: 1;
 					border-radius: 18.5px;
+					transform: translateY(-50%);
+					-webkit-transform: translateY(-50%);
+					-moz-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					-o-transform: translateY(-50%);
 				}
 			}
 		}

@@ -41,7 +41,7 @@ const Step5 = () => {
 	}
 
 	return (
-		<Layout prev={() => navigate('/step4')} next={() => nextStep()}>
+		<Layout setting={false} info={false} prev={() => navigate('/step4')} next={() => nextStep()}>
 			<div className='Step5'>
 				{/* <ReactSwipe
 					className='carousel'

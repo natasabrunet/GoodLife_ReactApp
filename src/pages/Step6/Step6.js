@@ -36,8 +36,8 @@ const Step6 = () => {
 		}
 	}
 	return (
-		<Layout prev={() => navigate('/step4')} next={() => putFurtherValues()}>
-			<div className='Step2'>
+		<Layout setting={false} info={false} prev={() => navigate('/step4')} next={() => putFurtherValues()}>
+			<div style={{maxWidth:"500px",margin:"auto"}} className='Step2'>
 				<h1
 					dangerouslySetInnerHTML={{ __html: texts[lang].step6.header }}
 					className='Step2__header c-main-header'></h1>

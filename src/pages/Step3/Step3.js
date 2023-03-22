@@ -15,8 +15,8 @@ const Step3 = () => {
 	}
 	const lang = useSelector(state => state.lang)
 	return (
-		<Layout prev={()=>navigate("/step1")}>
-			<div className='Step3'>
+		<Layout prev={() => navigate('/step1')} info={false} setting={false}>
+			<div style={{ maxWidth: '500px', margin: 'auto' }} className='Step3'>
 				<h1 className='Step3__header c-main-header'>
 					{texts[lang].step3.header}
 				</h1>
@@ -32,7 +32,6 @@ const Step3 = () => {
 						{lang === 'en' ? 'NO' : 'NON'}
 					</div>
 				</div>
-			
 			</div>
 		</Layout>
 	)

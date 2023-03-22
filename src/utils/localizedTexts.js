@@ -41,14 +41,13 @@ export const texts = {
 			header: 'Are you interested in a<br />complimentary 7-day pass?'
 		},
 		step7: {
-			
 			header: 'Thank you for registering!',
 			boldLine1:
-				'You have been entered into our Grand Prize draw for the Live-Long Fans contest.',
+				'You have been entered into the contest.',
 			line2:
 				'If you were interested in becoming a GoodLife Member or learning more about our Clubs, an Associate will be in touch with you.',
-			boldLine3: 'A confirmation has been sent to your email.',
-			button: 'PLAY THE SCRATCH GAME'
+			button: 'visit goodlife fitness',
+			boldLine3:'A confirmation has been sent to your email.'
 		},
 		step8: {
 			scratchHeader: 'Scratch away to reveal <br /> your instant prize!',

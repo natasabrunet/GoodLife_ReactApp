@@ -1,7 +1,7 @@
 import HomeBanner from 'components/icons/HomeBanner'
 import Layout from 'components/Layout/Layout'
 import { useForm } from 'hooks/useForm'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
@@ -9,9 +9,11 @@ import { setTeamLeadId } from 'redux/slices/report'
 import { setTeamLeads } from 'redux/slices/teamLeads'
 import axios from 'utils/api'
 import './Step0.scss'
-import dress from 'assets/images/dress.png'
+import ThatsIcon from 'assets/images/thatsIcon.svg'
+import BrokenGoodLife from 'assets/images/brokenGoodLife.svg'
 
 const Step0 = () => {
+	const [langIsEnglish, setLangIsEnglish] = useState(true)
 	const navigate = useNavigate()
 	const eventInfo = useSelector(state => state.eventInfo)
 	const teamLeads = useSelector(state => state.teamLeads)
@@ -39,23 +41,26 @@ const Step0 = () => {
 	return (
 		<Layout isHome={true} info={false} setting={false}>
 			<div className='Step0'>
-				<div className='banner'>
-					<HomeBanner />
+				<div className='header'>
+					<img src={ThatsIcon} />
+					<button
+						onClick={() => setLangIsEnglish(!langIsEnglish)}
+						className={!langIsEnglish && 'active'}>
+						<span>EN</span>
+						<span>FR</span>
+					</button>
 				</div>
-
-				<div className='dress_content'>
-					<div>
-						<h1>WIN $10,000</h1>
-						<h2>IN PERSONAL TRAINING</h2>
-						<h6>
-							PLUS MLSE GRAND PRIZE PACKS (Includes: 1 Year GoodLife
-							Memberships, Game Tickets, Real Sports Gift Cards and Jerseys)
-						</h6>
-					</div>
-					<img src={dress} />
+				<div className='content'>
+					<img src={BrokenGoodLife} />
+					<h4>you could WIN $10,000</h4>
+					<h5>IN PERSONAL TRAINING</h5>
+					<h6>
+						Prize includes TWO 1-year
+						<br />
+						GoodLife Fitness gym memberships.
+					</h6>
+					<Link to={'/step1'}>ENTER NOW</Link>
 				</div>
-
-				<Link to={"/step1"}>ENTER NOW</Link>
 				<p>
 					*No purchase necessary to enter the Contest. Contest begins January
 					10, 2023 and ends on December 31, 2023. Contest open to residents of

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Step7.scss'
 import { useSelector } from 'react-redux'
 import { texts } from 'utils/localizedTexts'
@@ -22,21 +22,24 @@ const Step7 = () => {
 		sendEmail()
 	}, [])
 	return (
-		<Layout>
+		<Layout setting={false} info={false} isPagination={false}>
 			<div className='Step6'>
 				<h1 className='Step6__header c-main-header'>
 					{texts[lang].step7.header}
 				</h1>
 				<h3 className='Step6__subheader'>
-					<b>{texts[lang].step7.boldLine1}</b> {texts[lang].step7.line2}
+					{/* <b>{texts[lang].step7.boldLine1}</b> */}
+					{texts[lang].step7.boldLine1} {texts[lang].step7.line2}
 				</h3>
 				<h3 className='Step6__subheader'>
-					<b>{texts[lang].step7.boldLine3}</b>
+					{/* <b>{texts[lang].step7.boldLine3}</b> */}
+					{texts[lang].step7.boldLine3}
+
 				</h3>
 				<div className='Step6__buttons'>
-					<button className='c-main-btn' onClick={() => navigate('/step7')}>
+					<Link to={'/'} className='c-main-btn' onClick={() => navigate('/step7')}>
 						{texts[lang].step7.button}
-					</button>
+					</Link>
 				</div>
 			</div>
 		</Layout>

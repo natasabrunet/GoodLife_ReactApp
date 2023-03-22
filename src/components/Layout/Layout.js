@@ -9,6 +9,7 @@ import SettingIcon from 'components/icons/SettingIcon'
 import lang from 'redux/slices/lang'
 import ArrowIcon from 'components/icons/ArrowIcon'
 import { useSelector } from 'react-redux'
+import AngleArrow from 'components/icons/AngleArrow'
 
 const Layout = ({
 	isHome = false,
@@ -25,7 +26,7 @@ const Layout = ({
 	const lang = useSelector(state => state.lang)
 
 	return (
-		<div className='Layout'>
+		<div className={`Layout ${isHome && 'Layout_landing'}`}>
 			<header className='Layout__header'>
 				{info ? (
 					<button onClick={() => setToggleInfo(true)}>
@@ -34,9 +35,12 @@ const Layout = ({
 				) : (
 					<span></span>
 				)}
-				<Link to={'/step1'}>
-					<LogoIcon />
-				</Link>
+				{!isHome && (
+					<Link to={'/step1'}>
+						<LogoIcon />
+					</Link>
+				)}
+
 				{setting ? (
 					<button onClick={() => navigate('/settings')}>
 						<SettingIcon />
@@ -54,7 +58,7 @@ const Layout = ({
 						{prev ? (
 							<button className='c-main-btn' onClick={prev}>
 								<span className='prev-arrow'>
-									<ArrowIcon />
+									<AngleArrow />
 								</span>{' '}
 								{lang === 'en' ? 'BACK' : 'RETOUR'}
 							</button>
@@ -77,7 +81,7 @@ const Layout = ({
 							<button className='c-main-btn' onClick={next}>
 								{lang === 'en' ? 'NEXT' : 'RETOUR'}
 								<span className='next-arrow'>
-									<ArrowIcon />
+									<AngleArrow />
 								</span>{' '}
 							</button>
 						) : (
