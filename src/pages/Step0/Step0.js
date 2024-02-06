@@ -11,6 +11,7 @@ import axios from 'utils/api'
 import './Step0.scss'
 import ThatsIcon from 'assets/images/thatsIcon.svg'
 import BrokenGoodLife from 'assets/images/brokenGoodLife.svg'
+import { setLang } from 'redux/slices/lang'
 
 const Step0 = () => {
 	const [langIsEnglish, setLangIsEnglish] = useState(true)
@@ -27,6 +28,9 @@ const Step0 = () => {
 		navigate('/step1')
 	}
 	useEffect(() => {
+		dispatch(setLang(langIsEnglish ? 'en' : 'fr'))
+	}, [langIsEnglish])
+	useEffect(() => {
 		const getTeamLeads = async () => {
 			try {
 				const { data } = await axios.get('/apps/getTeamLeads')
@@ -41,23 +45,15 @@ const Step0 = () => {
 	return (
 		<Layout isHome={true} info={false} setting={false}>
 			<div className='Step0'>
-				<div className='header'>
-					<img src={ThatsIcon} />
-					<button
-						onClick={() => setLangIsEnglish(!langIsEnglish)}
-						className={!langIsEnglish && 'active'}>
-						<span>EN</span>
-						<span>FR</span>
-					</button>
-				</div>
 				<div className='content'>
-					<img src={BrokenGoodLife} />
-					<h4>you could WIN $10,000</h4>
-					<h5>IN PERSONAL TRAINING</h5>
+					<h1>
+						ENTER FOR YOUR CHANCE TO WIN A TORONTO RAPTORS PRIZE PACK consisting
+						of:
+					</h1>
 					<h6>
-						Prize includes TWO 1-year
-						<br />
-						GoodLife Fitness gym memberships.
+						A pair of Raptors tickets, a Raptors jersey, a $50 Real Sports gift
+						card, and a one-year GoodLife all-access Performance Membership
+						valued at $1500.
 					</h6>
 					<Link to={'/step1'}>ENTER NOW</Link>
 				</div>

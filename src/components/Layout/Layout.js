@@ -18,7 +18,8 @@ const Layout = ({
 	next = false,
 	prev = false,
 	isPagination = true,
-	children
+	children,
+	noPagintaionButton = true
 }) => {
 	const location = useLocation()
 	const [toggleInfo, setToggleInfo] = useState(false)
@@ -50,44 +51,46 @@ const Layout = ({
 				)}
 			</header>
 			{isHome ? (
-				<div>{children}</div>
+				<>{children}</>
 			) : (
 				<>
 					<div className='Layout__content'>{children}</div>
-					<div className='btn__pagination'>
-						{prev ? (
-							<button className='c-main-btn' onClick={prev}>
-								<span className='prev-arrow'>
-									<AngleArrow />
-								</span>{' '}
-								{lang === 'en' ? 'BACK' : 'RETOUR'}
-							</button>
-						) : (
-							<span></span>
-						)}
-						{isPagination && (
-							<ul>
-								{[1, 1, 1, 1, 1].map((item, index) => (
-									<li
-										className={
-											Number(location.pathname.split('p')[1]) === index + 1 &&
-											'active'
-										}></li>
-								))}
-							</ul>
-						)}
+					{noPagintaionButton && (
+						<div className='btn__pagination'>
+							{prev ? (
+								<button className='c-main-btn' onClick={prev}>
+									<span className='prev-arrow'>
+										<AngleArrow />
+									</span>{' '}
+									{lang === 'en' ? 'BACK' : 'RETOUR'}
+								</button>
+							) : (
+								<span></span>
+							)}
+							{isPagination && (
+								<ul>
+									{[1, 1, 1, 1, 1].map((item, index) => (
+										<li
+											className={
+												Number(location.pathname.split('p')[1]) === index + 1 &&
+												'active'
+											}></li>
+									))}
+								</ul>
+							)}
 
-						{next ? (
-							<button className='c-main-btn' onClick={next}>
-								{lang === 'en' ? 'NEXT' : 'RETOUR'}
-								<span className='next-arrow'>
-									<AngleArrow />
-								</span>{' '}
-							</button>
-						) : (
-							<span></span>
-						)}
-					</div>
+							{next ? (
+								<button className='c-main-btn' onClick={next}>
+									{lang === 'en' ? 'NEXT' : 'RETOUR'}
+									<span className='next-arrow'>
+										<AngleArrow />
+									</span>{' '}
+								</button>
+							) : (
+								<span></span>
+							)}
+						</div>
+					)}
 				</>
 			)}
 			{toggleInfo && (

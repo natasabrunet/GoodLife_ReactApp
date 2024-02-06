@@ -22,7 +22,11 @@ const Step7 = () => {
 		sendEmail()
 	}, [])
 	return (
-		<Layout setting={false} info={false} isPagination={false}>
+		<Layout
+			setting={false}
+			info={false}
+			isPagination={false}
+			noPagintaionButton={false}>
 			<div className='Step6'>
 				<h1 className='Step6__header c-main-header'>
 					{texts[lang].step7.header}
@@ -34,10 +38,12 @@ const Step7 = () => {
 				<h3 className='Step6__subheader'>
 					{/* <b>{texts[lang].step7.boldLine3}</b> */}
 					{texts[lang].step7.boldLine3}
-
 				</h3>
 				<div className='Step6__buttons'>
-					<Link to={'/'} className='c-main-btn' onClick={() => navigate('/step7')}>
+					<Link
+						to={'/step7'}
+						className='c-main-btn'
+						onClick={() => navigate('/step7')}>
 						{texts[lang].step7.button}
 					</Link>
 				</div>

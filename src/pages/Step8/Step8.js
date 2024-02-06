@@ -50,7 +50,7 @@ const Step8 = () => {
 
 	const prizeClaimHandler = () => {
 		dispatch(resetUserSlice())
-		navigate('/step1')
+		navigate('/step0')
 	}
 
 	return (
@@ -65,7 +65,7 @@ const Step8 = () => {
 							: texts[lang].step8.scratchHeader
 					}}
 					className='Step7__header c-main-header'></h1>
-				{completed && (
+				{/* {completed && (
 					<Confetti
 						width={width}
 						height={height}
@@ -73,7 +73,7 @@ const Step8 = () => {
 						recycle={false}
 						onConfettiComplete={() => {}}
 					/>
-				)}
+				)} */}
 				{prize && (
 					<div className='scratch_me'>
 						<ScratchMe

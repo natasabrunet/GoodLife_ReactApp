@@ -10,11 +10,9 @@
 		height: 470px;
 		@include flex(space-between);
 		flex-wrap: wrap;
-		&--option {
-			&:nth-child(2),
-			&:first-child {
-				margin-bottom: 32px;
-			}
+		gap: 24px;
+		@include tablet() {
+			height: 500px;
 		}
 	}
 	&__buttons {

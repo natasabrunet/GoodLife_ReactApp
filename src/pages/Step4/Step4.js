@@ -102,7 +102,11 @@ const Step4 = () => {
 	}
 
 	return (
-		<Layout setting={false} info={false} next={() => postFormValues(values)} prev={() => navigate('/step2')}>
+		<Layout
+			setting={false}
+			info={false}
+			next={() => postFormValues(values)}
+			prev={() => navigate('/step2')}>
 			<div className='Step4'>
 				<h1 className='Step4__header c-main-header'>
 					{texts[lang].step4.formHeader}
@@ -174,13 +178,7 @@ const Step4 = () => {
 							/>
 						</div>
 					</div>
-					<div
-						style={{
-							display: 'flex',
-							maxWidth: '812px',
-							margin: '0 auto',
-							gap: '32px'
-						}}>
+					<div className='Step4__form--checkboxes'>
 						<div className='Step4__form--checkbox-container'>
 							<button style={{ background: '#F90036' }} type='button'>
 								<input

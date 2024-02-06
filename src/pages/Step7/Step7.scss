@@ -18,12 +18,13 @@
 		font-size: 34px;
 		line-height: 41px;
 		color: #000000;
-		margin: 0 auto;
+		margin: 0 auto 80px;
 		&:first-of-type {
 			margin-bottom: 90px;
 		}
 	}
 	&__buttons {
+		text-align: center;
 		width: 100%;
 		position: absolute;
 		top: 100%;
@@ -36,7 +37,16 @@
 		-moz-transform: translateX(50%);
 		-ms-transform: translateX(50%);
 		-o-transform: translateX(50%);
-
+		@include tablet() {
+			width: 100%;
+			position: relative;
+			right: 0;
+			transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+			-o-transform: translateX(0);
+		}
 		a {
 			margin-top: -140px;
 			display: inline-block;
@@ -47,14 +57,17 @@
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #ffffff;
-			background: #2242e0;
+			background: #f90036;
 			border-radius: 1000px;
 			padding: 60px;
 			-webkit-border-radius: 1000px;
 			-moz-border-radius: 1000px;
 			-ms-border-radius: 1000px;
 			-o-border-radius: 1000px;
-			border: #2242e0;
+			border: #f90036;
+			@include tablet() {
+				margin-top: 0;
+			}
 		}
 	}
 }

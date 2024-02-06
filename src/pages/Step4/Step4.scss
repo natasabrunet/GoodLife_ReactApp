@@ -40,12 +40,25 @@
 				}
 			}
 		}
+		&--checkboxes {
+			display: flex;
+			max-width: 812px;
+			margin: 0 auto;
+			gap: 32px;
+			@include tablet() {
+				flex-wrap: wrap;
+				gap: 16px;
+			}
+		}
 		&--checkbox-container {
 			margin-bottom: 38px;
 			width: 100%;
 			@include flex(flex-start, flex-start);
 			&:last-of-type {
 				margin-bottom: 85px;
+				@include tablet() {
+					margin-bottom: 24px;
+				}
 			}
 			label {
 				@include font(14px, 400, 20px, #231f20);
