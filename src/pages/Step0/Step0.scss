@@ -10,6 +10,7 @@
 	align-items: center;
 	@include tablet() {
 		max-width: 760px;
+		height: 87vh;
 	}
 	@include mobile() {
 		padding: 0 16px;

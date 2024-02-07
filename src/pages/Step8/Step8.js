@@ -35,7 +35,7 @@ const Step8 = () => {
 	const getPrize = async _id => {
 		try {
 			const { data } = await axios.put(`/apps/lead-prize/${_id}/`)
-			setPrize(data)
+			setPrize(data?.data)
 			console.log(data)
 		} catch (err) {
 			console.log(err)
@@ -69,7 +69,7 @@ const Step8 = () => {
 						onConfettiComplete={() => {}}
 					/>
 				)} */}
-				{prize && (
+				{prize && prize?.image && (
 					<div className='scratch_me'>
 						<ScratchMe
 							width={500}
