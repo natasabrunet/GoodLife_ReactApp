@@ -22,11 +22,7 @@ const Step7 = () => {
 		sendEmail()
 	}, [])
 	return (
-		<Layout
-			setting={false}
-			info={false}
-			isPagination={false}
-			noPagintaionButton={false}>
+		<Layout isPagination={false} noPagintaionButton={false}>
 			<div className='Step6'>
 				<h1 className='Step6__header c-main-header'>
 					{texts[lang].step7.header}

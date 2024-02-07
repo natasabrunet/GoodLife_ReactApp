@@ -18,10 +18,8 @@ const Step8 = () => {
 	const lang = useSelector(state => state.lang)
 	const { id } = useSelector(state => state.user)
 	const [modalIsOpen, setModalIsOpen] = useState(false)
+	const [prize, setPrize] = useState({})
 	const dispatch = useDispatch()
-	const { prizes } = useSelector(state => state.eventInfo)
-	const { prize } = useSelector(state => state.user)
-	const randomPic = length => Math.floor(Math.random() * length)
 	const { width, height } = useWindowSize()
 	const [completed, setCompleted] = useState(false)
 	const onCompleted = () => {
@@ -30,23 +28,20 @@ const Step8 = () => {
 			setModalIsOpen(true)
 		}, 3501)
 	}
-	const setRandomPrize = async img => {
+	useEffect(() => {
+		getPrize(id)
+	}, [])
+
+	const getPrize = async _id => {
 		try {
-			const { data } = await axios.put(`/apps/setPrizeSpent/${img.id}/${id}`)
-			dispatch(setPrize(img))
+			const { data } = await axios.put(`/apps/lead-prize/${_id}/`)
+			setPrize(data)
+			console.log(data)
 		} catch (err) {
 			console.log(err)
 			toast.error(err)
 		}
 	}
-	useEffect(() => {
-		if (prizes.length) {
-			const randomIndex = randomPic(prizes.length)
-			const randomImage = prizes[randomIndex]
-			setRandomPrize(randomImage)
-		}
-		return () => {}
-	}, [prizes])
 
 	const prizeClaimHandler = () => {
 		dispatch(resetUserSlice())
@@ -54,7 +49,7 @@ const Step8 = () => {
 	}
 
 	return (
-		<Layout isPagination={false}>
+		<Layout freeXPadding isPagination={false}>
 			<div className='Step7'>
 				<h1
 					dangerouslySetInnerHTML={{

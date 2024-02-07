@@ -19,7 +19,8 @@ const Layout = ({
 	prev = false,
 	isPagination = true,
 	children,
-	noPagintaionButton = true
+	noPagintaionButton = true,
+	freeXPadding
 }) => {
 	const location = useLocation()
 	const [toggleInfo, setToggleInfo] = useState(false)
@@ -54,7 +55,9 @@ const Layout = ({
 				<>{children}</>
 			) : (
 				<>
-					<div className='Layout__content'>{children}</div>
+					<div className={`Layout__content  ${freeXPadding && 'px-0'}`}>
+						{children}
+					</div>
 					{noPagintaionButton && (
 						<div className='btn__pagination'>
 							{prev ? (

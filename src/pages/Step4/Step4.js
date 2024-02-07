@@ -102,11 +102,7 @@ const Step4 = () => {
 	}
 
 	return (
-		<Layout
-			setting={false}
-			info={false}
-			next={() => postFormValues(values)}
-			prev={() => navigate('/step2')}>
+		<Layout next={() => postFormValues(values)} prev={() => navigate('/step2')}>
 			<div className='Step4'>
 				<h1 className='Step4__header c-main-header'>
 					{texts[lang].step4.formHeader}

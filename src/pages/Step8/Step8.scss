@@ -2,6 +2,9 @@
 
 .Step7 {
 	width: 100%;
+	max-width: 680px;
+	margin: 0 auto;
+	min-height: 700px;
 	&__header {
 		margin-bottom: 48px;
 		min-height: 80px;
@@ -35,7 +38,7 @@
 			-moz-border-radius: 10px;
 			-ms-border-radius: 10px;
 			-o-border-radius: 10px;
-}
+		}
 	}
 	&__prize-modal {
 		position: fixed;

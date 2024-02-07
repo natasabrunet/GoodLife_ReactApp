@@ -36,8 +36,13 @@ const Step6 = () => {
 		}
 	}
 	return (
-		<Layout setting={false} info={false} prev={() => navigate('/step4')} next={() => putFurtherValues()}>
-			<div style={{maxWidth:"500px",margin:"auto"}} className='Step2'>
+		<Layout
+			freeXPadding
+			prev={() => navigate('/step4')}
+			next={() => putFurtherValues()}>
+			<div
+				style={{ maxWidth: '620px', margin: 'auto' }}
+				className='Step2 Step6___container'>
 				<h1
 					dangerouslySetInnerHTML={{ __html: texts[lang].step6.header }}
 					className='Step2__header c-main-header'></h1>
@@ -57,6 +62,9 @@ const Step6 = () => {
 						{lang === 'en' ? 'NO' : 'NON'}
 					</div>
 				</div>
+				<p
+					dangerouslySetInnerHTML={{ __html: texts[lang].step6.note }}
+					className='Step2___note'></p>
 			</div>
 			<ToastContainer />
 		</Layout>

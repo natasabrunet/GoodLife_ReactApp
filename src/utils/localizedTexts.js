@@ -10,11 +10,11 @@ export const texts = {
 			header: 'Are you currently a GoodLife Fitness member?'
 		},
 		step4: {
-			formHeader: 'To enter the contest, please fill out your details below.',
+			formHeader: 'To enter the contest, please fill out your details below:',
 			formPlaceholders: {
-				firstName: 'Live-Long Fan First Name',
-				lastName: 'Live-Long Fan Last Name',
-				email: 'Live-Long Fan Email',
+				firstName: 'First Name',
+				lastName: 'Last Name',
+				email: 'Email',
 				postcode: 'Postal Code',
 				phone: 'Phone Number'
 			},
@@ -38,16 +38,17 @@ export const texts = {
 			complimentary: 'Are you interested in a complimentary 7-day pass?'
 		},
 		step6: {
-			header: 'Are you interested in a<br />complimentary 7-day pass?'
+			header: 'Are you interested in a<br />complimentary 7-day pass?',
+			note: `* By clicking "Yes" you are consenting to GoodLife contacting you, by telephone, SMS message or e-mail address for the purpose of sending you marketing, special offers and other communications that might be of interest to you. You may opt out at any time.<br/><br />
+			** Once you submit your request, GoodLife will contact you to schedule an appointment for a Club tour. Visitors must be of the age of majority in the province in which the Club is located (unless accompanied by their parent or legal guardian) and may only attend during staffed Club hours. Non-transferable. No cash value. To redeem your free workout, on completion of the Club tour, a GoodLife Associate will book you in for a free workout session, which must occur within 1 week of the Club tour. A guest liability waiver will need to be signed upon arriving for your free workout. Other conditions may apply. Visit <a href="http://goodlifefitness.com/">goodlifefitness.com</a> or call one of our Clubs for details and for hours of operation.`
 		},
 		step7: {
 			header: 'Thank you for registering!',
-			boldLine1:
-				'You have been entered into the contest.',
+			boldLine1: 'You have been entered into the contest.',
 			line2:
-				'If you were interested in becoming a GoodLife Member or learning more about our Clubs, an Associate will be in touch with you.',
-			button: 'visit goodlife fitness',
-			boldLine3:'A confirmation has been sent to your email.'
+				' If you were interested in becoming a GoodLife Member or learning more about our Clubs, an Associate will be in touch with you.',
+			button: 'play “scratch to win!”',
+			boldLine3: 'A confirmation has been sent to your email.'
 		},
 		step8: {
 			scratchHeader: 'Scratch away to reveal <br /> your instant prize!',

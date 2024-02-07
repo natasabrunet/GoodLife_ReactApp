@@ -2,11 +2,36 @@
 
 .Step2 {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
 	&__header {
 		margin-bottom: 76px;
 	}
 	&__options {
 		width: 100%;
+		max-width: 520px;
+		margin: auto auto 180px;
 		@include flex(space-between);
+	}
+	&.Step6___container {
+		.Step2__header {
+			margin-bottom: 60px;
+		}
+		.Step2__options {
+			margin: auto 0 24px;
+		}
+		.Step2___note {
+			padding: 0 16px;
+			margin: 52px 0 0;
+			color: #000;
+			font-size: 10px;
+			font-weight: 400;
+			line-height: 13.5px;
+			a {
+				text-decoration-line: underline;
+			}
+		}
 	}
 }

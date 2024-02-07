@@ -8,8 +8,10 @@ const Step2 = () => {
 	const navigate = useNavigate()
 	const lang = useSelector(state => state.lang)
 	return (
-		<Layout info={false} setting={false}>
-			<div style={{ maxWidth: '500px', margin: 'auto' }} className='Step2'>
+		<Layout>
+			<div
+				style={{ maxWidth: '500px', margin: 'auto', height: '600px' }}
+				className='Step2'>
 				<h1 className='Step2__header c-main-header'>
 					{texts[lang].step2.header}
 				</h1>

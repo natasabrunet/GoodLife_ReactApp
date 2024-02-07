@@ -18,9 +18,12 @@
 		font-size: 34px;
 		line-height: 41px;
 		color: #000000;
-		margin: 0 auto 80px;
+		margin: 0 auto 60px;
 		&:first-of-type {
 			margin-bottom: 90px;
+		}
+		&:last-of-type {
+			max-width: 400px;
 		}
 	}
 	&__buttons {
@@ -29,7 +32,8 @@
 		position: absolute;
 		top: 100%;
 		@include flex;
-		margin-top: 68px;
+		margin-top: 50px;
+		margin-bottom: 20px;
 		width: fit-content;
 		right: 50%;
 		transform: translateX(50%);
