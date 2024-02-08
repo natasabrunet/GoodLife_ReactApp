@@ -41,7 +41,7 @@ const Step5 = () => {
 	}
 
 	return (
-		<Layout prev={() => navigate('/step4')} next={() => nextStep()}>
+		<Layout prev={() => navigate('/step3')} next={() => nextStep()}>
 			<div className='Step5'>
 				<div>
 					<h1 className='Step5__header c-main-header'>
