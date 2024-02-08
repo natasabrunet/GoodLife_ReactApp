@@ -10,10 +10,15 @@
 	align-items: center;
 	@include tablet() {
 		max-width: 760px;
-		height: 87vh;
+		min-height: calc(100vh - 160px);
 	}
 	@include mobile() {
 		padding: 0 16px;
+		justify-content: start;
+	}
+	@include smallmobile() {
+		padding: 0 28px;
+		max-height: calc(100vh - 160px);
 		justify-content: end;
 	}
 	.header {

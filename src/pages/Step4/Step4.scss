@@ -5,6 +5,9 @@
 	&__header {
 		margin: 0 auto 50px;
 		max-width: 480px;
+		@include smallmobile() {
+			margin: 0 auto 30px;
+		}
 	}
 	&__buttons {
 		width: 100%;
@@ -20,22 +23,38 @@
 			&:nth-last-of-type(2) {
 				margin-bottom: 60px;
 			}
+			@include smallmobile() {
+				flex-wrap: wrap;
+				margin-bottom: 16px;
+				gap: 16px;
+			}
 			.form-input {
 				width: 100%;
 				@include flex(flex-start);
 				background-color: #fff;
 				border-bottom: 2px solid black;
+				@include smallmobile() {
+					margin-left: 0 !important;
+				}
 				&:nth-of-type(2) {
 					margin-left: 20px;
 				}
 				img {
 					margin-right: 20px;
+					@include smallmobile() {
+						margin-right: 8px;
+					}
 				}
 				input {
 					width: 100%;
 					background-color: #fff;
 					padding: 15px 0;
 					border: none;
+					@include smallmobile() {
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 21.6px; /* 135% */
+					}
 					&::placeholder {
 						color: #000;
 						font-size: 16px;
@@ -60,10 +79,18 @@
 			margin-bottom: 38px;
 			width: 100%;
 			@include flex(flex-start, flex-start);
+			@include smallmobile() {
+				flex-wrap: wrap;
+				gap: 16px;
+				margin-bottom: 16px;
+			}
 			&:last-of-type {
 				margin-bottom: 85px;
 				@include tablet() {
 					margin-bottom: 24px;
+					label {
+						margin-top: 0 !important;
+					}
 				}
 				label {
 					margin-top: 16px;
@@ -72,6 +99,9 @@
 			label {
 				@include font(16px, 600, 21.6px, #231f20);
 				padding-left: 20px;
+				@include smallmobile() {
+					padding-left: 0;
+				}
 				span {
 					text-decoration: underline;
 					cursor: pointer;
@@ -89,6 +119,11 @@
 				padding: 0 15px;
 				flex-shrink: 0;
 				overflow: hidden;
+				@include smallmobile() {
+					padding: 0 9px;
+					height: 40px;
+					width: 75px;
+				}
 				input {
 					position: absolute;
 					top: 0;
@@ -105,6 +140,9 @@
 					line-height: 18px;
 					text-align: center;
 					color: #ffffff;
+					@include smallmobile() {
+						font-size: 13px;
+					}
 				}
 
 				i {
@@ -122,6 +160,12 @@
 					-moz-transform: translateY(-50%);
 					-ms-transform: translateY(-50%);
 					-o-transform: translateY(-50%);
+					@include smallmobile() {
+						top: 50%;
+						left: 7px;
+						width: 25px;
+						height: 25px;
+					}
 				}
 			}
 		}

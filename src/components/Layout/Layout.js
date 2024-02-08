@@ -10,6 +10,8 @@ import lang from 'redux/slices/lang'
 import ArrowIcon from 'components/icons/ArrowIcon'
 import { useSelector } from 'react-redux'
 import AngleArrow from 'components/icons/AngleArrow'
+import Logo from 'assets/images/logo.svg'
+import { useWindowSize } from 'hooks/useWindowSize'
 
 const Layout = ({
 	isHome = false,
@@ -26,11 +28,12 @@ const Layout = ({
 	const [toggleInfo, setToggleInfo] = useState(false)
 	const navigate = useNavigate()
 	const lang = useSelector(state => state.lang)
+	const { width } = useWindowSize()
 
 	return (
 		<div className={`Layout ${isHome && 'Layout_landing'}`}>
 			<header className='Layout__header'>
-				{info ? (
+				{info && width > 550 ? (
 					<button onClick={() => setToggleInfo(true)}>
 						<InfoIcon />
 					</button>
@@ -38,12 +41,12 @@ const Layout = ({
 					<span></span>
 				)}
 				{!isHome && (
-					<Link to={'/step1'}>
-						<LogoIcon />
+					<Link to={'/step1'} className='logo'>
+						<img src={Logo} alt='goodlife fitness' />
 					</Link>
 				)}
 
-				{setting ? (
+				{setting && width > 550 ? (
 					<button onClick={() => navigate('/settings')}>
 						<SettingIcon />
 					</button>

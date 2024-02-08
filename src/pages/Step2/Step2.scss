@@ -6,21 +6,55 @@
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
+	@include smallmobile() {
+		height: 260px !important;
+	}
 	&__header {
 		margin-bottom: 76px;
+		@include smallmobile() {
+			margin-bottom: 40px;
+		}
 	}
 	&__options {
 		width: 100%;
 		max-width: 520px;
 		margin: auto auto 180px;
 		@include flex(space-between);
+		@include smallmobile() {
+			margin: auto auto 20px;
+			justify-content: center;
+			gap: 16px;
+		}
 	}
 	&.Step6___container {
+		@include smallmobile() {
+			height: auto;
+			height: 100%;
+			min-height: 450px;
+		}
+		@media (max-width: 480px) {
+			min-height: 470px;
+		}
+		@media (max-width: 420px) {
+			min-height: 500px;
+		}
+		@media (max-width: 370px) {
+			min-height: 520px;
+		}
+		@media (max-width: 335px) {
+			min-height: 550px;
+		}
 		.Step2__header {
 			margin-bottom: 60px;
 		}
 		.Step2__options {
 			margin: auto 0 24px;
+			justify-content: center;
+			gap: 16px;
+			@include smallmobile() {
+				padding: 0 16px;
+				margin: 0 0 24px;
+			}
 		}
 		.Step2___note {
 			padding: 0 16px;
@@ -29,6 +63,9 @@
 			font-size: 10px;
 			font-weight: 400;
 			line-height: 13.5px;
+			@include smallmobile() {
+				margin: 24px 0 0;
+			}
 			a {
 				text-decoration-line: underline;
 			}

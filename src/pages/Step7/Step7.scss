@@ -9,6 +9,12 @@
 		line-height: 48px;
 		text-align: center;
 		text-transform: uppercase;
+		@include smallmobile() {
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 25px; /* 125% */
+			letter-spacing: -0.4px;
+		}
 	}
 	&__subheader {
 		text-align: center;
@@ -19,8 +25,17 @@
 		line-height: 41px;
 		color: #000000;
 		margin: 0 auto 60px;
+		@include smallmobile() {
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 18.9px; /* 135% */
+			margin: 0 auto 32px;
+		}
 		&:first-of-type {
 			margin-bottom: 90px;
+			@include smallmobile() {
+				margin-bottom: 40px;
+			}
 		}
 		&:last-of-type {
 			max-width: 400px;
@@ -51,6 +66,11 @@
 			-ms-transform: translateX(0);
 			-o-transform: translateX(0);
 		}
+		@include smallmobile() {
+			position: absolute;
+			bottom: -60px;
+			top: unset;
+		}
 		a {
 			margin-top: -140px;
 			display: inline-block;
@@ -71,6 +91,13 @@
 			border: #2242e0;
 			@include tablet() {
 				margin-top: 0;
+			}
+			@include smallmobile() {
+				padding: 32px;
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 18.9px; /* 135% */
+				letter-spacing: 0.7px;
 			}
 		}
 	}

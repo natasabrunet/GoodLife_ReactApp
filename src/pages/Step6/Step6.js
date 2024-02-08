@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './Step6.scss'
+import '../Step2/Step2.scss'
 import { useSelector } from 'react-redux'
 import { texts } from 'utils/localizedTexts'
 import Layout from 'components/Layout/Layout'

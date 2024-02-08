@@ -16,6 +16,10 @@
 		align-content: center;
 		justify-items: center;
 		gap: 32px 60px;
+		@include smallmobile() {
+			gap: 8px;
+			height: 260px !important;
+		}
 		@media (max-width: 1165px) {
 			max-width: 580px;
 			margin: 0 auto 20px;
@@ -28,6 +32,12 @@
 			font-weight: 600;
 			line-height: 42.5px; /* 125% */
 			letter-spacing: -0.34px;
+			@include smallmobile() {
+				font-size: 20px !important;
+				font-weight: 600 !important;
+				line-height: 25px !important; /* 125% */
+				letter-spacing: -0.4px !important;
+			}
 		}
 	}
 	&__buttons {

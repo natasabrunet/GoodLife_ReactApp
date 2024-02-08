@@ -2,6 +2,9 @@
 
 .Step3 {
 	width: 100%;
+	@include smallmobile() {
+		height: 260px !important;
+	}
 	&__header {
 		margin-bottom: 76px;
 	}
@@ -9,6 +12,10 @@
 		width: 100%;
 		margin-bottom: 200px;
 		@include flex(space-between);
+		@include smallmobile() {
+			justify-content: center;
+			gap: 16px;
+		}
 	}
 	&__buttons {
 		width: 100%;
