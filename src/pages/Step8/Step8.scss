@@ -5,6 +5,9 @@
 	max-width: 680px;
 	margin: 0 auto;
 	min-height: 700px;
+	@include smallmobile() {
+		min-height: 400px;
+	}
 	&__header {
 		margin-bottom: 48px;
 		min-height: 80px;
@@ -13,6 +16,11 @@
 		line-height: 48px;
 		text-align: center;
 		color: #000000;
+		@include smallmobile() {
+			font-weight: 900 !important;
+			font-size: 20px !important;
+			line-height: 24px;
+		}
 	}
 	// &__prize-img {
 	// 	width: 100%;

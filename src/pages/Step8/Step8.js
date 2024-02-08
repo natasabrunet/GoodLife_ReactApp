@@ -74,8 +74,8 @@ const Step8 = () => {
 				{prize && prize?.image && (
 					<div className='scratch_me'>
 						<ScratchMe
-							width={500}
-							height={465}
+							width={width > 550 ? 500 : 280}
+							height={width > 550 ? 465 : 270}
 							foregroundImageSrc={cover}
 							backgroundImageSrc={prize.image}
 							strokeWidth={45}

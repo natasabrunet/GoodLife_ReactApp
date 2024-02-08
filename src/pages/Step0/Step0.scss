@@ -10,10 +10,15 @@
 	align-items: center;
 	@include tablet() {
 		max-width: 760px;
-		height: 87vh;
+		min-height: calc(100vh - 160px);
 	}
 	@include mobile() {
 		padding: 0 16px;
+		justify-content: start;
+	}
+	@include smallmobile() {
+		padding: 0 28px;
+		max-height: calc(100vh - 160px);
 		justify-content: end;
 	}
 	.header {
@@ -102,8 +107,10 @@
 			text-transform: uppercase;
 			margin-bottom: 36px;
 			@media (max-width: 550px) {
-				font-size: 34px;
-				margin-bottom: 24px;
+				font-size: 32px;
+				line-height: 34px; /* 106.25% */
+				letter-spacing: -0.32px;
+				margin-bottom: 20px;
 			}
 		}
 
@@ -118,9 +125,10 @@
 			margin-bottom: 24px;
 			max-width: 650px;
 			@media (max-width: 550px) {
-				font-size: 20px;
-				line-height: 25px;
-				margin-bottom: 16px;
+				font-size: 16px;
+				line-height: normal;
+				letter-spacing: -0.32px;
+				margin-bottom: 32px;
 			}
 		}
 		a {
@@ -137,6 +145,10 @@
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #f90036;
+			@include smallmobile() {
+				font-size: 14px;
+				line-height: 18.9px; /* 135% */
+			}
 		}
 	}
 

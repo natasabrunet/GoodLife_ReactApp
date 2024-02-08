@@ -8,7 +8,7 @@
 	&::before {
 		content: '';
 		width: 100%;
-		height: 60%;
+		height: 20%;
 		min-width: 100vw;
 		min-height: 60vh;
 		bottom: 0;
@@ -21,9 +21,14 @@
 			min-height: 70vh;
 			height: 70%;
 		}
-		// @include mobile() {
-		// 	height: 80%;
-		// }
+		@include smallmobile() {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #f90036 8.77%);
+			height: 80%;
+			min-height: 80vh;
+		}
+		@media (max-width: 380px) {
+			height: 85%;
+		}
 	}
 }
 .Layout {
@@ -36,12 +41,17 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+	@include smallmobile() {
+		padding: 40px 0 10px;
+	}
 
 	&__header {
 		width: 100%;
 		padding: 24px 60px 22px;
 		@include flex(space-between);
-
+		@include smallmobile() {
+			padding: 8px 60px 22px;
+		}
 		button {
 			width: 52px;
 			height: 52px;
@@ -51,6 +61,19 @@
 			overflow: hidden;
 			margin-top: -75px;
 			background: transparent !important;
+		}
+		.logo {
+			max-width: 500px;
+			width: 100%;
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+				object-position: center;
+			}
+			@include smallmobile() {
+				max-width: 200px;
+			}
 		}
 	}
 	&__content {
@@ -64,6 +87,14 @@
 		border-radius: 10px;
 		&.px-0 {
 			padding: 78px 0 15px;
+		}
+		@include smallmobile() {
+			width: calc(100% - 32px);
+			padding: 26px 16px 15px;
+			min-height: 384px;
+			&.px-0 {
+				padding: 26px 0 15px;
+			}
 		}
 	}
 	&__prize-modal {
@@ -109,17 +140,28 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-
+		@include smallmobile() {
+			margin-top: 21px;
+			margin-bottom: 30px;
+			padding: 0 16px;
+		}
 		> span {
 			display: flex;
 			min-width: 215px;
 			height: 84px;
+			@include smallmobile() {
+				min-width: 92px;
+				height: 36px;
+			}
 		}
 
 		ul {
 			display: flex;
 			align-items: center;
 			gap: 8px;
+			@include smallmobile() {
+				gap: 4px;
+			}
 			li {
 				border-radius: 8px;
 				width: 18px;
@@ -129,6 +171,10 @@
 				-moz-border-radius: 8px;
 				-ms-border-radius: 8px;
 				-o-border-radius: 8px;
+				@include smallmobile() {
+					width: 10px;
+					height: 10px;
+				}
 			}
 
 			.active {

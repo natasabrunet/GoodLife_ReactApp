@@ -4,6 +4,9 @@
 	width: 100%;
 	&__header {
 		margin-bottom: 76px;
+		@include smallmobile() {
+			margin-bottom: 40px;
+		}
 	}
 	&__options {
 		width: 100%;

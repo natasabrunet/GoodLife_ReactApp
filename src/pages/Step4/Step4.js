@@ -102,7 +102,10 @@ const Step4 = () => {
 	}
 
 	return (
-		<Layout next={() => postFormValues(values)} prev={() => navigate('/step2')}>
+		<Layout
+			form
+			next={() => postFormValues(values)}
+			prev={() => navigate('/step2')}>
 			<div className='Step4'>
 				<h1 className='Step4__header c-main-header'>
 					{texts[lang].step4.formHeader}
@@ -187,8 +190,7 @@ const Step4 = () => {
 								<span>YES</span>
 								<span>NO</span>
 
-								<i
-									style={{ left: values?.isTermsAgreed ? '12px' : '71px' }}></i>
+								<i style={{ left: values?.isTermsAgreed ? '8px' : '42px' }}></i>
 							</button>
 							<label>{texts[lang].step4.emailAgreementText}</label>
 						</div>
@@ -203,8 +205,7 @@ const Step4 = () => {
 								/>
 								<span>YES</span>
 								<span>NO</span>
-								<i
-									style={{ left: values?.isRulesAgreed ? '12px' : '71px' }}></i>
+								<i style={{ left: values?.isRulesAgreed ? '8px' : '42px' }}></i>
 							</button>
 							<label>
 								{texts[lang].step4.rulesHeader.text}{' '}

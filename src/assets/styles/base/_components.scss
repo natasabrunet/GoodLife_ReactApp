@@ -8,6 +8,30 @@
 	text-align: center;
 	text-transform: uppercase;
 	border: 2px solid #fff;
+	@include smallmobile() {
+		padding: 8px 16px;
+		@include font(14px, 600, 19px, #f90036);
+		.next-arrow {
+			margin-left: 10px !important;
+			font-size: 20px !important;
+			@include flex;
+			text-align: center;
+			svg {
+				width: 10px;
+				height: 14px;
+			}
+		}
+		.prev-arrow {
+			margin-right: 10px !important;
+			font-size: 20px !important;
+			@include flex;
+			text-align: center;
+			svg {
+				width: 10px;
+				height: 14px;
+			}
+		}
+	}
 	&:hover {
 		border-color: #f90036;
 		background-color: #f90036;
@@ -31,6 +55,9 @@
 .c-main-header {
 	text-align: center;
 	@include font(34px, 700, 50px, #231f20);
+	@include smallmobile() {
+		@include font(20px, 600, 25px, #231f20);
+	}
 }
 
 .c-main-option {
@@ -52,6 +79,12 @@
 	&.sm {
 		font-size: 24px;
 		line-height: 27px;
+	}
+	@include smallmobile() {
+		flex-shrink: 0;
+		width: 125px;
+		height: 125px;
+		@include font(34px, 600, 42px, #f90036);
 	}
 }
 
