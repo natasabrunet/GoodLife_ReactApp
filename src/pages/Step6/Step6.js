@@ -49,14 +49,14 @@ const Step6 = () => {
 				<div className='Step2__options'>
 					<div
 						className={`Step2__options--option c-main-option ${
-							status && 'active'
+							status === true && 'active'
 						}`}
 						onClick={() => setStatus(true)}>
 						{lang === 'en' ? 'YES' : 'OUI'}
 					</div>
 					<div
 						className={`Step2__options--option c-main-option ${
-							!status && 'active'
+							status === false && 'active'
 						}`}
 						onClick={() => setStatus(false)}>
 						{lang === 'en' ? 'NO' : 'NON'}
