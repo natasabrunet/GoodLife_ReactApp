@@ -53,11 +53,13 @@ const Step8 = () => {
 			<div className='Step7'>
 				<h1
 					dangerouslySetInnerHTML={{
-						__html: completed
-							? `${texts[lang].step8.wonHeader} ${
-									lang === 'en' ? prize.name_en : prize.name_fr
-							  }!`
-							: texts[lang].step8.scratchHeader
+						__html: id
+							? completed
+								? `${texts[lang].step8.wonHeader} ${
+										lang === 'en' ? prize.name_en : prize.name_fr
+								  }!`
+								: texts[lang].step8.scratchHeader
+							: 'Please Fill the form to get your prize'
 					}}
 					className='Step7__header c-main-header'></h1>
 				{/* {completed && (
