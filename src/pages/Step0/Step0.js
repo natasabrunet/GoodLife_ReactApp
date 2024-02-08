@@ -47,11 +47,11 @@ const Step0 = () => {
 			<div className='Step0'>
 				<div className='content'>
 					<h1>
-						ENTER FOR YOUR CHANCE TO WIN A TORONTO RAPTORS PRIZE PACK consisting
-						of:
+						ENTER FOR YOUR CHANCE TO WIN A TORONTO MAPLE LEAFS PRIZE PACK
+						consisting of:
 					</h1>
 					<h4>
-						A pair of Raptors tickets, a Raptors jersey, a $50 Real Sports gift
+						A pair of Leafs tickets, a Leafs jersey, a $50 Real Sports gift
 						card, and a one-year GoodLife all-access Performance Membership
 						valued at $1500.
 					</h4>
@@ -59,19 +59,19 @@ const Step0 = () => {
 				</div>
 				<p>
 					*No purchase necessary to enter the Contest. Contest begins February
-					12, 2024 and ends on February 12, 2024. Contest open to attendees of
-					the Toronto Raptors game, other than those who reside in the province
-					of Quebec, who are not employees of GoodLife Fitness Centres Inc. or
-					Influence Retail Services Inc. To participate, complete the on-screen
-					instructions via iPad or your mobile device at the GoodLife Activation
-					on the concourse of Scotiabank Arena. The names of all valid
-					participants will be entered into a Grand Prize draw for a chance to
-					win 1 MLSE Prize Pack with an approximate retail value of $1500.00
-					CAD. Grand Prize Draw will take place on Thursday, February 15th, 2024
-					and the Winner will be contacted on that date. Other conditions apply.
-					Visit www.GLMembership.ca for more details and for full rules and
-					regulations. This Contest is administered by Influence Retail Services
-					Inc. who retains sole responsibility of the Contest.
+					13, 2024 and ends on February 13, 2024. Contest open to attendees of
+					the Toronto Maple Leafs game, other than those who reside in the
+					province of Quebec, who are not employees of GoodLife Fitness Centres
+					Inc. or Influence Retail Services Inc. To participate, complete the
+					on-screen instructions via iPad or your mobile device at the GoodLife
+					Activation on the concourse of Scotiabank Arena. The names of all
+					valid participants will be entered into a Grand Prize draw for a
+					chance to win 1 MLSE Prize Pack with an approximate retail value of
+					$1500.00 CAD. Grand Prize Draw will take place on Thursday, February
+					15th, 2024 and the Winner will be contacted on that date. Other
+					conditions apply. Visit www.GLMembership.ca for more details and for
+					full rules and regulations. This Contest is administered by Influence
+					Retail Services Inc. who retains sole responsibility of the Contest.
 				</p>
 			</div>
 		</Layout>
