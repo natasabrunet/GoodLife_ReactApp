@@ -28,6 +28,7 @@ const Layout = ({
 	const navigate = useNavigate()
 	const { width } = useWindowSize()
 	const lang = useSelector(state => state.lang)
+	const { width } = useWindowSize()
 
 	return (
 		<div className={`Layout ${isHome && 'Layout_landing'}`}>
