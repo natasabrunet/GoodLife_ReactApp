@@ -51,7 +51,7 @@ export const texts = {
 			boldLine3: 'A confirmation has been sent to your email.'
 		},
 		step8: {
-			scratchHeader: 'Scratch away to reveal <br /> your instant prize!',
+			scratchHeader: 'Scratch away to reveal<br />your instant prize!',
 			wonHeader: "You've won a",
 			claimHeader: 'Before you go!',
 			claimSubheader: 'Did you claim your prize?',
