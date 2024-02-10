@@ -24,6 +24,7 @@
 	}
 	@media (max-width: 420px) {
 		min-height: calc(100vh - 80px);
+		max-height: unset;
 	}
 	.header {
 		display: flex;
@@ -146,6 +147,13 @@
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #2242e0;
+			@include smallmobile() {
+				padding: 24px 32px;
+				height: auto;
+				font-size: 14px;
+				line-height: 16px; /* 135% */
+				letter-spacing: 0.7px;
+			}
 		}
 	}
 
