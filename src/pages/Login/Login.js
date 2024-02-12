@@ -5,13 +5,15 @@ import { setEventInfo } from 'redux/slices/eventInfo'
 import axios from 'utils/api'
 import './Login.scss'
 import { toast, ToastContainer } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import PasswordIcon from 'assets/images/password-icon.svg'
 
 const Login = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const [pass, setPass] = useState('')
+	const [params] = useSearchParams()
+
 	const setActiveEvent = async eventId => {
 		try {
 			const { data } = await axios.put(`/apps/setActiveEvent/${eventId}`)
@@ -40,6 +42,7 @@ const Login = () => {
 		}
 	}
 	useEffect(() => {
+		if (params.get('event_password')) sendPass(params.get('event_password'))
 		const clearCacheData = () => {
 			caches.keys().then(names => {
 				names.forEach(name => {
