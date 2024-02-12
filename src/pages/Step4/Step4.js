@@ -13,6 +13,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import CloseModal from 'assets/images/close-modal.svg'
 import { texts } from 'utils/localizedTexts'
 import Layout from 'components/Layout/Layout'
+import { useWindowSize } from 'hooks/useWindowSize'
 
 const Step4 = () => {
 	const [rulesText, setRulesText] = useState('')
@@ -22,6 +23,7 @@ const Step4 = () => {
 	const { formValues, isPosted, isMember, id } = useSelector(
 		state => state.user
 	)
+	const [width] = useWindowSize()
 	const lang = useSelector(state => state.lang)
 	const eventInfo = useSelector(state => state.eventInfo)
 	const [toggleRules, setToggleRules] = useState(false)
@@ -190,7 +192,17 @@ const Step4 = () => {
 								<span>YES</span>
 								<span>NO</span>
 
-								<i style={{ left: values?.isTermsAgreed ? '8px' : '42px' }}></i>
+								<i
+									style={{
+										left:
+											width > 550
+												? values?.isTermsAgreed
+													? '12px'
+													: '70px'
+												: values?.isTermsAgreed
+												? '8px'
+												: '42px'
+									}}></i>
 							</button>
 							<label>{texts[lang].step4.emailAgreementText}</label>
 						</div>
@@ -205,7 +217,17 @@ const Step4 = () => {
 								/>
 								<span>YES</span>
 								<span>NO</span>
-								<i style={{ left: values?.isRulesAgreed ? '8px' : '42px' }}></i>
+								<i
+									style={{
+										left:
+											width > 550
+												? values?.isRulesAgreed
+													? '12px'
+													: '70px'
+												: values?.isRulesAgreed
+												? '8px'
+												: '42px'
+									}}></i>
 							</button>
 							<label>
 								{texts[lang].step4.rulesHeader.text}{' '}
