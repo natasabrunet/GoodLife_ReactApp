@@ -42,6 +42,7 @@ const Login = () => {
 		}
 	}
 	useEffect(() => {
+		console.log(params.get('event_password'))
 		if (params.get('event_password')) sendPass(params.get('event_password'))
 		const clearCacheData = () => {
 			caches.keys().then(names => {
