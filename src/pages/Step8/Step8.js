@@ -109,18 +109,32 @@ const Step8 = () => {
 									onClick={prizeClaimHandler}
 								/>
 							</div>
-							<h1 className='modal-header c-main-header'>
-								{texts[lang].step8.claimHeader}
-							</h1>
-							<h2 className='modal-subheader'>
-								{texts[lang].step8.claimSubheader}
-							</h2>
-							<p className='modal-paragraph'>{texts[lang].step8.claimText}</p>
-							<button
-								className='modal-button c-main-btn'
-								onClick={prizeClaimHandler}>
-								{texts[lang].step8.claimButton}
-							</button>
+							<div className='section_container'>
+								<h1 className='modal-header c-main-header'>
+									{texts[lang].step8.claimHeader}
+								</h1>
+								<h2 className='modal-subheader'>
+									{texts[lang].step8.claimSubheader}
+								</h2>
+							</div>
+							<div className='section_container'>
+								<img
+									src={prize.image}
+									className='modal-prize-image'
+									alt='Prize image'
+								/>
+								<h4 className='modal-prize-name'>
+									{lang === 'en' ? prize.name_en : prize.name_fr}
+								</h4>
+							</div>
+							<div className='section_container'>
+								<p className='modal-paragraph'>{texts[lang].step8.claimText}</p>
+								<button
+									className='modal-button c-main-btn'
+									onClick={prizeClaimHandler}>
+									{texts[lang].step8.claimButton}
+								</button>
+							</div>
 						</div>
 					</div>
 				)}

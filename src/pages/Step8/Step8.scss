@@ -69,35 +69,57 @@
 		height: 100vh;
 		overflow: auto;
 		background-color: rgba(0, 0, 0, 0.4);
+		padding: 16px;
 		@include flex;
 		&--content {
-			width: 520px;
-			height: 500px;
+			width: 100%;
+			max-width: 520px;
+			min-height: 500px;
 			background-color: #fff;
 			border-radius: 10px;
 			box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.16);
 			display: flex;
+			justify-content: space-between;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
+			.section_container {
+				width: 100%;
+				padding: 0 16px;
+			}
 			.close-button {
 				width: 100%;
 				@include flex(flex-end);
 				border-bottom: 2px solid #a7a9ac;
-				padding: 30px;
+				padding: 16px;
 			}
 			.modal-header {
-				margin-top: 40px;
-				margin-bottom: 50px;
+				margin-top: 20px;
+				margin-bottom: 16px;
 			}
 			.modal-subheader {
 				@include font(20px, 700, 24px, #231f20);
 			}
+			.modal-prize-image {
+				width: 100%;
+				max-width: 200px;
+				height: auto;
+				object-fit: contain;
+				margin: 0 16px;
+			}
+			.modal-prize-name {
+				font-weight: 600;
+				line-height: 1;
+				font-size: 20px;
+			}
 			.modal-paragraph {
 				@include font(16px, 400, 20px, #231f20);
-				margin-bottom: 50px;
-				margin-top: 30px;
+				margin: 16px auto 8px;
 				max-width: 320px;
+				width: 100%;
+			}
+			button {
+				margin: 0 auto 16px;
 			}
 		}
 	}
