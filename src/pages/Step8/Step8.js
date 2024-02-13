@@ -31,6 +31,9 @@ const Step8 = () => {
 	}
 	useEffect(() => {
 		getPrize(id)
+		document.getElementById('main_body').style.overflowY = 'hidden'
+		return () =>
+			(document.getElementById('main_body').style.overflowY = 'unset')
 	}, [])
 
 	const getPrize = async _id => {
