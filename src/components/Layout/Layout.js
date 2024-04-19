@@ -10,6 +10,7 @@ import lang from 'redux/slices/lang'
 import ArrowIcon from 'components/icons/ArrowIcon'
 import { useSelector } from 'react-redux'
 import AngleArrow from 'components/icons/AngleArrow'
+import Logo from 'assets/images/logo.svg'
 import { useWindowSize } from 'hooks/useWindowSize'
 
 const Layout = ({

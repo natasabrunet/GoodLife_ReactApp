@@ -10,7 +10,7 @@
 	border: 2px solid #fff;
 	@include smallmobile() {
 		padding: 8px 16px;
-		@include font(14px, 600, 19px, #f90036);
+		@include font(14px, 600, 19px, #2242e0);
 		.next-arrow {
 			margin-left: 10px !important;
 			font-size: 20px !important;
@@ -84,7 +84,7 @@
 		flex-shrink: 0;
 		width: 125px;
 		height: 125px;
-		@include font(34px, 600, 42px, #f90036);
+		@include font(34px, 600, 42px, #2242e0);
 	}
 }
 

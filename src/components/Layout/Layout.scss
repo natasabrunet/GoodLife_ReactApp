@@ -117,7 +117,8 @@
 			height: 70%;
 		}
 		@include smallmobile() {
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #f90036 8.77%);
+			//background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #2242e0 8.77%);
+			background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #f90036 8.77%);
 			height: 80%;
 			min-height: 80vh;
 		}
@@ -139,7 +140,6 @@
 	@include smallmobile() {
 		padding: 40px 0 10px;
 	}
-
 	&__header {
 		width: 100%;
 		padding: 24px 60px 22px;
@@ -235,6 +235,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		@include smallmobile() {
 			margin-top: 21px;
 			margin-bottom: 30px;
