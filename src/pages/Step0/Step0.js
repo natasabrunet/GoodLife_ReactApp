@@ -47,31 +47,15 @@ const Step0 = () => {
 			<div className='Step0'>
 				<div className='content'>
 					<h1>
-						ENTER FOR YOUR CHANCE TO WIN A TORONTO MAPLE LEAFS PRIZE PACK
-						consisting of:
+					YOU COULD WIN $10,000 IN PERSONAL TRAINING
 					</h1>
 					<h4>
-						A pair of Leafs tickets, a Leafs jersey, a $50 Real Sports gift
-						card, and a one-year GoodLife all-access Performance Membership
-						valued at $1500.
+					Prize includes TWO 1-year GoodLife Fitness gym memberships.
 					</h4>
 					<Link to={'/step1'}>ENTER NOW</Link>
 				</div>
 				<p>
-					*No purchase necessary to enter the Contest. Contest begins February
-					13, 2024 and ends on February 13, 2024. Contest open to attendees of
-					the Toronto Maple Leafs game, other than those who reside in the
-					province of Quebec, who are not employees of GoodLife Fitness Centres
-					Inc. or Influence Retail Services Inc. To participate, complete the
-					on-screen instructions via iPad or your mobile device at the GoodLife
-					Activation on the concourse of Scotiabank Arena. The names of all
-					valid participants will be entered into a Grand Prize draw for a
-					chance to win 1 MLSE Prize Pack with an approximate retail value of
-					$1500.00 CAD. Grand Prize Draw will take place on Thursday, February
-					15th, 2024 and the Winner will be contacted on that date. Other
-					conditions apply. Visit www.GLMembership.ca for more details and for
-					full rules and regulations. This Contest is administered by Influence
-					Retail Services Inc. who retains sole responsibility of the Contest.
+				No purchase necessary to enter the Contest. Contest begins on April 26, 2024 and ends of October 19, 2024. Contest open to those who attend any of the Lead Gen activations being conducted throughout Canada, other than those who reside in the province of Quebec and who are not employees of GoodLife Fitness Centres Inc. or Influence Retail Services Inc. To participate, complete the on-screen instructions via iPad or on your own mobile device via the on-site QR code at the GoodLife booth. The names of all valid participants will be entered into a Grand Prize draw for the chance to win a 1-year GoodLife Fitness ‘Performance’ Membership and a $10,000 personal training package. Approximate retail value of $11,500 CAD. Grand Prize draw will take place on Monday, October 28, 2024 and the Winner will be contacted on that date. Other conditions apply. Visit www.GLMembership.ca for more details and for full Rules and Regulations. This contest is administered by Influence Retail Services Inc. who retains sole responsibility of the Contest.
 				</p>
 			</div>
 		</Layout>

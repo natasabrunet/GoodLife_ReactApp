@@ -4,23 +4,24 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
-	justify-content: end;
+	justify-content:start;
 	min-height: calc(100vh - 160px);
 	flex-direction: column;
 	align-items: center;
+	padding-top:130px;
 	@include tablet() {
 		max-width: 760px;
-		justify-content: end;
+		justify-content:start;
 	}
 	@include mobile() {
 		padding: 0 16px;
-		justify-content: end;
+		justify-content:start;
 	}
 	@include smallmobile() {
 		padding: 0 28px;
 		min-height: calc(100vh - 80px);
 		max-height: calc(100vh - 160px);
-		justify-content: end;
+		justify-content:start;
 	}
 	@media (max-width: 420px) {
 		min-height: calc(100vh - 80px);
@@ -105,7 +106,7 @@
 		h1 {
 			text-align: center;
 			color: #fff;
-			font-size: 72px;
+			font-size: 86px;
 			font-weight: 700;
 			line-height: 1.1;
 			letter-spacing: -1.44px;
