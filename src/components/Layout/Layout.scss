@@ -1,7 +1,99 @@
 @import 'assets/styles';
-
+@media screen and (max-width:549px) {
+	.Layout_landing {
+		background-image: url(../../assets/images/leafs/main-bg-mobile.jpg) !important;
+		.Step0 {
+			.content{
+				h1{
+					letter-spacing: 1.56px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width:320px) {
+	.Layout_landing {
+		.Step0{
+			padding-top: 75px;
+		}
+	}
+}
+@media screen and (min-width:400px) {
+	.Layout_landing {
+		.Step0{
+			padding-top: 120px;
+		}
+	}
+}
+@media screen and (min-width:500px) {
+	.Layout_landing {
+		.Step0{
+			padding-top: 175px;
+		}
+	}
+}
+@media screen and (min-width:550px) {
+	.Layout_landing {
+		background-image: url(../../assets/images/leafs/main-bg.jpg) !important;
+		.Step0{
+			padding-top: 48px;
+			.content{
+				h1{
+					font-size:35px;
+				}
+				h4{
+					font-size: 20px;
+					line-height: 1.1;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width:600px) {
+	.Layout_landing {
+		background-image: url(../../assets/images/leafs/main-bg.jpg) !important;
+		.Step0{
+			padding-top: 75px;
+			.content{
+				h1{
+					font-size:50px;
+					line-height: 1.1;
+				}
+				h4{
+					font-size: 30px;
+					line-height: 1.1;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width:700px) {
+	.Layout_landing {
+		.Step0{
+			padding-top: 120px;
+    max-width: 600px;
+			.content{
+				h1{
+					font-size:86px;
+					line-height: 1.1;
+				}
+				h4{
+					font-size: 34px;
+					line-height: 1.1;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width:800px) {
+	.Layout_landing {
+		.Step0{
+			padding-top: 175px;
+		}
+	}
+}
 .Layout_landing {
-	background-image: url(../../assets/images/raptors/main_background.png) !important;
+	//background-image: url(../../assets/images/leafs/main-bg.jpg);
 	position: relative;
 	background-position: top !important;
 	background-size: contain !important;
@@ -16,13 +108,17 @@
 		display: block;
 		z-index: 0;
 		position: absolute;
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #f90036 22.77%);
+		//background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #2242e0 22.77%);
+		background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #f90036 8.77%);
+
+		//background: linear-gradient(0deg, #2242e0 22.77%,  #f90036 0%);
 		@include tablet() {
 			min-height: 70vh;
 			height: 70%;
 		}
 		@include smallmobile() {
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #f90036 8.77%);
+			//background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #2242e0 8.77%);
+			background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #f90036 8.77%);
 			height: 80%;
 			min-height: 80vh;
 		}
@@ -37,14 +133,13 @@
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	background-image: url(../../assets/images/raptors/form_background.png);
+	background-image: url(../../assets/images/leafs/form-bg.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	@include smallmobile() {
 		padding: 40px 0 10px;
 	}
-
 	&__header {
 		width: 100%;
 		padding: 24px 60px 22px;
@@ -140,6 +235,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		@include smallmobile() {
 			margin-top: 21px;
 			margin-bottom: 30px;
@@ -179,7 +275,7 @@
 
 			.active {
 				border: 1px solid #fff;
-				background: linear-gradient(0deg, #f90036, #f90036), #ffffff !important;
+				background: linear-gradient(0deg, #2242e0, #2242e0), #ffffff !important;
 			}
 		}
 	}

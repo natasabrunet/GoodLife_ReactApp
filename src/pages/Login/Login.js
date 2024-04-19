@@ -1,42 +1,21 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setIsAuthenticated } from 'redux/slices/auth'
-import { setEventInfo } from 'redux/slices/eventInfo'
-import axios from 'utils/api'
 import './Login.scss'
-import { toast, ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import PasswordIcon from 'assets/images/password-icon.svg'
+import { sendPass } from 'utils/authHandler'
 
 const Login = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const [pass, setPass] = useState('')
-	const setActiveEvent = async eventId => {
-		try {
-			const { data } = await axios.put(`/apps/setActiveEvent/${eventId}`)
-			navigate('/step0')
-		} catch (err) {
-			console.log(err)
-			toast.error(err.response.data.message)
-		}
-	}
-	const sendPass = async p => {
-		try {
-			const { data } = await axios.get(`/apps/getEventInfo/${p}`)
-			dispatch(setEventInfo(data.data))
-			dispatch(setIsAuthenticated(true))
-			setActiveEvent(data.data.id)
-		} catch (err) {
-			console.log(err)
-			toast.error(err.response.data.message)
-		}
-	}
+
 	const onSubmit = e => {
 		e.preventDefault()
 		const password = pass.trim()
 		if (password.length) {
-			sendPass(password)
+			sendPass(password, dispatch, navigate)
 		}
 	}
 	useEffect(() => {

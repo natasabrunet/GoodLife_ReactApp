@@ -1,6 +1,6 @@
 import './Layout.scss'
 import { useLocation, useNavigate } from 'react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CloseModal from 'assets/images/close-modal.svg'
 import Logo from 'assets/images/logo.svg'
 import { Link } from 'react-router-dom'
@@ -10,6 +10,7 @@ import lang from 'redux/slices/lang'
 import ArrowIcon from 'components/icons/ArrowIcon'
 import { useSelector } from 'react-redux'
 import AngleArrow from 'components/icons/AngleArrow'
+import Logo from 'assets/images/logo.svg'
 import { useWindowSize } from 'hooks/useWindowSize'
 
 const Layout = ({
@@ -28,6 +29,21 @@ const Layout = ({
 	const navigate = useNavigate()
 	const { width } = useWindowSize()
 	const lang = useSelector(state => state.lang)
+	const { width } = useWindowSize()
+
+	useEffect(() => {
+		if (location.pathname.includes('/step7')) {
+			document.getElementById('main_body').style.overflow = 'hidden'
+			document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+		} else {
+			document.getElementById('main_body').style.overflow = 'unset'
+			document.getElementsByTagName('html')[0].style.overflow = 'unset'
+		}
+		return () => {
+			document.getElementById('main_body').style.overflow = 'unset'
+			document.getElementsByTagName('html')[0].style.overflow = 'unset'
+		}
+	}, [location.pathname])
 
 	return (
 		<div className={`Layout ${isHome && 'Layout_landing'}`}>
