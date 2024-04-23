@@ -74,7 +74,7 @@
     max-width: 600px;
 			.content{
 				h1{
-					font-size:76px;
+					font-size:62px;
 					line-height: 1.1;
 				}
 				h4{
@@ -88,7 +88,7 @@
 @media screen and (min-width:800px) {
 	.Layout_landing {
 		.Step0{
-			padding-top: 105px;
+			padding-top: 230px;
 		}
 	}
 }
@@ -109,16 +109,16 @@
 		z-index: 0;
 		position: absolute;
 		//background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #F90036 22.77%);
-		background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 8.77%);
+		background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%);
 
 		//background: linear-gradient(0deg, #F90036 22.77%,  #f90036 0%);
 		@include tablet() {
-			min-height: 70vh;
-			height: 70%;
+			min-height: 100vh;
+			height: 100%;
 		}
 		@include smallmobile() {
 			//background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #F90036 8.77%);
-			background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 8.77%);
+			background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 14.77%);
 			height: 80%;
 			min-height: 80vh;
 		}
