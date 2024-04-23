@@ -181,7 +181,7 @@ const Step4 = () => {
 					</div>
 					<div className='Step4__form--checkboxes'>
 						<div className='Step4__form--checkbox-container'>
-							<button style={{ background: '#F90036' }} type='button'>
+							<button style={{ background: '#2242E0' }} type='button'>
 								<input
 									type={'checkbox'}
 									id='isTermsAgreed'

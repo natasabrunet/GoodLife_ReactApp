@@ -10,7 +10,6 @@ import lang from 'redux/slices/lang'
 import ArrowIcon from 'components/icons/ArrowIcon'
 import { useSelector } from 'react-redux'
 import AngleArrow from 'components/icons/AngleArrow'
-import Logo from 'assets/images/logo.svg'
 import { useWindowSize } from 'hooks/useWindowSize'
 
 const Layout = ({
@@ -29,7 +28,6 @@ const Layout = ({
 	const navigate = useNavigate()
 	const { width } = useWindowSize()
 	const lang = useSelector(state => state.lang)
-	const { width } = useWindowSize()
 
 	useEffect(() => {
 		if (location.pathname.includes('/step7')) {

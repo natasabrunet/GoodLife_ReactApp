@@ -31,6 +31,23 @@
 			position: unset !important;
 		}
 	}
+
+	.logoMain {
+		max-width: 500px;
+		width: 100%;
+		height: auto; 
+		position: relative;
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			object-position: center;
+			position: relative !important;
+		}
+		@include smallmobile() {
+			max-width: 200px;
+		}
+	}
 	@include tablet() {
 		max-width: 760px;
 		justify-content:start;
@@ -55,7 +72,7 @@
 		width: 100%;
 
 		button {
-			background: #2242e0;
+			background: #F90036;
 			border-radius: 1000px;
 			width: 124px;
 			height: 56px;
@@ -120,25 +137,24 @@
 			max-width: 500px;
 			margin: 0 auto 40px;
 		}
-		img {
-			position: absolute;
-			right: 0;
-			bottom: -50px;
+		img { 
+			padding-top: 20px;
 		}
 		h1 {
 			text-align: center;
 			color: #fff;
-			font-size: 86px;
+			font-size: 76px;
 			font-weight: 700;
 			line-height: 1.1;
 			letter-spacing: -1.44px;
 			text-transform: uppercase;
 			margin-bottom: 36px;
 			@media (max-width: 550px) {
-				font-size: 32px;
+				font-size: 42px;
 				line-height: 34px; /* 106.25% */
 				letter-spacing: -0.32px;
-				margin-bottom: 20px;
+				margin-bottom: 0px;
+				margin-top: 20px;
 			}
 		}
 
@@ -172,13 +188,15 @@
 			text-align: center;
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
-			color: #2242e0;
+			margin-top: 120px;
+			color: #F90036;
 			@include smallmobile() {
 				padding: 24px 32px;
 				height: auto;
 				font-size: 14px;
 				line-height: 16px; /* 135% */
 				letter-spacing: 0.7px;
+				margin-top: 40px;
 			}
 		}
 	}

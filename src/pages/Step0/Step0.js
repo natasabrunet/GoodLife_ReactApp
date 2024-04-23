@@ -15,6 +15,7 @@ import { setLang } from 'redux/slices/lang'
 import ThatsTheLogo from 'assets/images/leafs/thatsthe.png';
 import GoodLifeLogo from 'assets/images/leafs/goodlife.png';
 import SignatureLogo from 'assets/images/leafs/signature.png';
+import Logo from 'assets/images/logo.svg'
 
 const Step0 = () => {
 	const [langIsEnglish, setLangIsEnglish] = useState(true)
@@ -53,15 +54,14 @@ const Step0 = () => {
 				</div>
 				<div className='content'>
 					<h1>
-					YOU COULD WIN $10,000 IN PERSONAL TRAINING
-					</h1>
-					<div className="signature-logo">
-				<img src={SignatureLogo} alt="Signature" />
+						ENTER FOR YOUR CHANCE TO WIN $10,000 IN PERSONAL TRAINING
+					</h1> 
+				<div className='logoMain'>
+					<img src={Logo} alt='goodlife fitness' />
 				</div>
-					<h4>
-					Prize includes TWO 1-year GoodLife Fitness gym memberships.
-					</h4>
+				<div>
 					<Link to={'/step1'}>ENTER NOW</Link>
+				</div>
 				</div>
 				<div className="goodlife-logo">
 				<img src={GoodLifeLogo} alt="Good Life" />
