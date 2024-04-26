@@ -49,6 +49,37 @@ const Step8 = () => {
 		navigate('/step0')
 	}
 
+	//scratch area moving fixes
+	useEffect(() => {
+		const scratchArea = document.querySelector('.scratch_me');
+	
+		const handleTouchMove = (event) => {
+		  event.preventDefault();
+		};
+		
+		scratchArea.addEventListener('touchmove', handleTouchMove, { passive: false });
+		
+		const toggleBodyScroll = (disable) => {
+			if (disable) {
+			document.body.style.overflow = 'hidden'; 
+			document.body.style.position = 'fixed'; 
+			document.body.style.width = '100%'; 
+			} else {
+			document.body.style.removeProperty('overflow');
+			document.body.style.removeProperty('position');
+			document.body.style.removeProperty('width');
+			}
+		};
+		
+	 
+		toggleBodyScroll(true);
+	
+		return () => { 
+		  scratchArea.removeEventListener('touchmove', handleTouchMove);
+		  toggleBodyScroll(false);
+		};
+	}, []);
+
 	return (
 		<Layout freeXPadding isPagination={false}>
 			<div className='Step7'>
