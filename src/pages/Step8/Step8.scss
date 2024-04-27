@@ -39,6 +39,8 @@
 	// 	}
 	// }
 	.scratch_me {
+		touch-action: none;
+
 		> div {
 			border-radius: 10px;
 			overflow: hidden;
